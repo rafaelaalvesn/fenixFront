@@ -1,0 +1,118 @@
+﻿
+#home {
+    color background = #778beb
+        fenix: #6f1e51/
+        
+    background-image: url("/img/background-fenix.jpg");
+    background-size:100%;
+
+}
+
+#cards {
+
+    width: 980px;
+    left: 50%;
+    margin-left: -490px;
+    position: relative;    
+}
+
+
+#lembretes {
+    width: 950px;
+    left: 50%;
+    margin-left: -475px;
+    position: relative;
+}
+
+
+    #cards img {
+    /*height: 230px;
+    width: 230px;*/
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+#cardstxt {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    text-decoration: none!important; /*Tinha o sublinhado azul dos links*/
+    color: white !important; /*Pinta o texto que antes estava no formato URL de preto*/
+}
+
+
+#welcome {
+    text-decoration-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+
+
+
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+        /* Set all odd list items to a different color (zebra-stripes) */
+    ul li:nth-child(odd) {
+        background: #f9f9f9;
+ 
+    }
+
+        /* Darker background-color on hover */
+    ul li:hover {
+    
+        background: #778beb;
+    }
+
+        /* When clicked on, add a background color and strike out text */
+    ul li.checked {
+        background: #888;
+        color: #fff;
+        text-decoration: line-through;
+      
+    }
+
+            /* Add a "checked" mark when clicked on */
+        ul li.checked::before {
+            content: '';
+            position: absolute;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 10px;
+            left: 16px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
+         
+        }
+
+    /* Clear floats after the header */
+    .header:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+
+    .addBtn:hover {
+        background-color: #bbb;
+    }
+

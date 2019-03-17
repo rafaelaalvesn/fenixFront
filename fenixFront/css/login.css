@@ -1,0 +1,27 @@
+﻿html body {
+    background-image: linear-gradient(purple, black);
+    background-size: 100%;
+
+}
+
+#tela{
+    margin-top:50px;
+}
+
+#login {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: rgba(0,0,0,0.1) !important;
+    width: 500px;
+    position: relative;
+}
+
+#login img {
+    width: 100px;
+    height: 100px;
+}
+#textTitle {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+}

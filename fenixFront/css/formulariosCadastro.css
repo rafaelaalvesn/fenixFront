@@ -1,0 +1,15 @@
+﻿/*Configura cores e estilos do título no topo do formulário*/
+.tituloFormularios {
+    text-align: left;
+    text-decoration-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+}
+
+/*Colocar o asterisco de obrigatório*/
+.obrigatorio:after {
+    content: " *";
+    color: red;
+}

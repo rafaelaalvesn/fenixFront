@@ -9,6 +9,7 @@ body {
 }
 
 .conteudoPagina {
+    height: auto;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -30,7 +31,7 @@ body {
     margin-bottom: 80px;
 }
 #linksMenu a {
-    color: rgb(111,30,81);
+    color: lightgray;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
@@ -42,6 +43,9 @@ body {
         color: white;
     }
 
-#content{
-    background-color: greenyellow;
+
+.btn-preto {
+    background-color: #000000;
+    color: white;
 }
+

@@ -16,7 +16,7 @@
                     <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
                 </div>
                 <div class="col col-md-7" align="right">
-                    <button type="button" class="btn btn-labeled btn-preto" id="novoCadastro" onclick="novoCadastro()">
+                    <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
                         <span class="btn-label"><i class="fa fa-plus"></i></span>&nbspNovo Cadastro
                     </button>
                 </div>
