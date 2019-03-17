@@ -1,14 +1,15 @@
 ﻿/*Cor do background: #778beb
   Cor da Fênix:  #6f1e51
 */
+
 body {
-    background-color: rgba(111,30,81,0.4);
+    background-color: #f5f6fa;
     background-size: 100%;
     padding-bottom: 20px;
-  
 }
 
 .conteudoPagina {
+
     height: auto;
     padding-left: 100px;
     padding-right: 100px;
@@ -48,4 +49,3 @@ body {
     background-color: #000000;
     color: white;
 }
-

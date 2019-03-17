@@ -1,19 +1,21 @@
-﻿html body {
-    background-image: linear-gradient(purple, black);
+﻿/*html, body {
+    background-image: linear-gradient(white, black);
     background-size: 100%;
+    
+}*/
 
-}
 
-#tela{
-    margin-top:50px;
+#tela {
+    padding-top: 100px;
 }
 
 #login {
-    padding-top: 100px;
+
     padding-bottom: 50px;
-    background-color: rgba(0,0,0,0.1) !important;
+    background-color: rgb(0,0,0) !important;
     width: 500px;
     position: relative;
+    
 }
 
 #login img {
@@ -24,4 +26,9 @@
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 50px;
+}
+
+.btn-outline-white {
+    background-color: white;
+    color: black;
 }

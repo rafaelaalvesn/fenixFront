@@ -15,14 +15,14 @@
                 <div><img src="../img/fenix-logo-w.png" /></div>
                 <label id="textTitle">ABRIGO FÊNIX </label>
                 <div class="form-group">
-                   <%-- <label for="exampleInputEmail1" style="color:white">Usuário</label>--%>
+                   
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Login">
                 </div>
                 <div class="form-group">
-                    <%--<label for="exampleInputPassword1" style="color:white">Senha</label>--%>
+          
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                 </div>
-                <button type="submit" class="btn btn-outline-warning" id="btnLogin" onclick="btnLogin()">Entrar</button>
+                <button type="button" class="btn btn-outline-white" id="btnLogin" onclick="btnLogin()">Entrar</button>
             </form>
         </div>
 
@@ -30,7 +30,6 @@
 </div>
     </asp:Content>
 <asp:Content ContentPlaceHolderID="scripts" runat="server">
-
     <script src="../.js/login.js"></script>
 </asp:Content>
 
