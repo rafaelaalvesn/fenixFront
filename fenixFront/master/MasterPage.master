@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="master_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Abrigo Fênix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../css/master.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div>
+        <asp:ContentPlaceHolder ID="header" runat="server">
+            <nav class="navbar navbar-expand-lg navbar-dark menu">
+                <a class="navbar-brand logotipoTitulo" href="#">  <img src="/img/fenix-logo-w.png" width="30" height="30" class="d-inline-block align-top" alt="">&nbsp Fênix</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-sm-auto ml-auto" id="linksMenu">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Crianças</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Visitas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Caixa</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Estoque</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Controle de Usuários</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </asp:ContentPlaceHolder>
+
+        <div class="conteudoPagina">
+        <asp:ContentPlaceHolder ID="content" runat="server">      
+        </asp:ContentPlaceHolder>
+            </div>
+        <asp:ContentPlaceHolder ID="footer" runat="server">
+            <footer>
+                <p>2019- Abrigo Fênix</p>
+            </footer>
+        </asp:ContentPlaceHolder>
+    </div>
+    <asp:ContentPlaceHolder ID="scripts" runat="server">        
+    </asp:ContentPlaceHolder>
+</body>
+       
+</html>

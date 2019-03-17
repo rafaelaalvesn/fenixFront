@@ -1,0 +1,13 @@
+﻿#topo{
+    padding-bottom: 30px;
+    margin-left: -15px;
+}
+
+.container {
+    padding-right: 0px;
+}
+
+.btn-preto {
+    background-color: #000000;
+    color: white;
+}

@@ -1,0 +1,47 @@
+﻿/*Cor do background: #778beb
+  Cor da Fênix:  #6f1e51
+*/
+body {
+    background-color: rgba(111,30,81,0.4);
+    background-size: 100%;
+    padding-bottom: 20px;
+  
+}
+
+.conteudoPagina {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.logotipo {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-left: 35px;
+    top: 0px;
+}
+
+
+.logotipoTitulo {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu {
+    background-color: rgba(0,0,0,5.0);
+    margin-bottom: 80px;
+}
+#linksMenu a {
+    color: rgb(111,30,81);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 5px;
+    transition: color .3s linear;
+}
+
+    #linksMenu a:hover {
+        color: white;
+    }
+
+#content{
+    background-color: greenyellow;
+}
