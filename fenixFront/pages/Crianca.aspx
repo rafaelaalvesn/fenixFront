@@ -6,67 +6,76 @@
 
 <asp:Content ContentPlaceHolderID="content" runat="server">
     <div id="topo">
-    <div>
-        <div class="container col-12">
-            <div class="row">              
-                <div class="col-md-4">
-                    <input type="text" class="form-control formulario" placeholder="Pesquisar Jovem">
-                </div>
-                <div class="col col-md-1">
-                    <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
-                </div>
-                <div class="col col-md-7" align="right">
-                    <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
-                        <span class="btn-label"><i class="fa fa-plus"></i></span>&nbspNovo Cadastro
-                    </button>
+        <div>
+            <div class="container col-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control formulario" placeholder="Pesquisar Jovem">
+                    </div>
+                    <div class="col col-md-1">
+                        <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
+                    </div>
+                    <div class="col col-md-7" align="right">
+                        <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
+                            <span class="btn-label"><i class="fa fa-plus"></i></span>&nbspNovo Cadastro
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     <div align="center" id="grid">
-     
-            <div class="card bg-light">
 
-                <table class="table table-hover table1">
-                    <!-- INÍCIO DA ROW-->
-                    <tr>
-                        <td class="col-6">ANA MARIA DE SOUZA PEREIRA</td>
-                        <td class="col-2">LIGADA</td>
-                        <td class="col-2">
-                            <button type="button" class="btn btn-default bg-transparent" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float:right">
-                                <span class="fa fa-pencil"></span>
-                            </button>
-                        </td>
-                    </tr>
-                    <!-- FIM DA ROW-->
+        <div class="card bg-light">
 
-                    <!-- INÍCIO DA ROW-->
-                    <tr>
-                        <td class="col-6">PEDRO PAULO FERREIRA</td>
-                        <td class="col-2">DESLIGADO</td>
-                        <td class="col-2">
-                            <button type="button" class="btn btn-default bg-transparent" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float:right">
-                                <span class="fa fa-pencil"></span>
-                            </button>
-                        </td>
-                    </tr>
-                    <!-- FIM DA ROW-->
+            <table class="table table-hover table1">
+                <!-- INÍCIO DA ROW-->
+                <tr>
+                    <td class="col-8">ANA MARIA DE SOUZA PEREIRA</td>
+                    <td class="col-2">LIGADA</td>
+                    <td class="col-2">
+                        <button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
+                            <span class="fa fa-pencil"></span>
+                        </button>
+                        <button type="button" class="btn btn-default bg-transparent formulario" id="btOlhoVisualizar" onclick="btnOlhoVisualizar()" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
+                            <span class="fa fa-eye"></span>
+                        </button>
+                    </td>
+                </tr>
 
-                    <!-- INÍCIO DA ROW-->
-                    <tr>
-                        <td class="col-6">ITALO FABRÍCIO GOMES COURA</td>
-                        <td class="col-2">LIGADO</td>
-                        <td class="col-2">
-                            <button type="button" class="btn btn-default bg-transparent" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float:right">
-                                <span class="fa fa-pencil"></span>
-                            </button>
-                        </td>
-                    </tr>
-                    <!-- FIM DA ROW-->
-                </table>
-            </div>
+                <tr>
+                    <td class="col-8">ANA MARIA DE SOUZA PEREIRA</td>
+                    <td class="col-2">LIGADA</td>
+                    <td class="col-1">
+                </tr>
+                <!-- FIM DA ROW-->
+
+                <!-- INÍCIO DA ROW-->
+                <tr>
+                    <td class="col-6">PEDRO PAULO FERREIRA</td>
+                    <td class="col-2">DESLIGADO</td>
+                    <td class="col-2">
+                        <button type="button" class="btn btn-default bg-transparent" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
+                            <span class="fa fa-pencil"></span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- FIM DA ROW-->
+
+                <!-- INÍCIO DA ROW-->
+                <tr>
+                    <td class="col-6">ITALO FABRÍCIO GOMES COURA</td>
+                    <td class="col-2">LIGADO</td>
+                    <td class="col-2">
+                        <button type="button" class="btn btn-default bg-transparent" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
+                            <span class="fa fa-pencil"></span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- FIM DA ROW-->
+            </table>
         </div>
+    </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scripts" runat="server">
     <script src="../.js/crianca.js"></script>
