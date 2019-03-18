@@ -10,7 +10,7 @@
             <div class="container col-12">
                 <div class="row">
                     <div class="col-md-4">
-                        <input type="text" class="form-control formulario" placeholder="Pesquisar Jovem">
+                        <input type="text" class="form-control formulario" placeholder="Pesquisar Jovem" id="txtPesquisa">
                     </div>
                     <div class="col col-md-1">
                         <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
