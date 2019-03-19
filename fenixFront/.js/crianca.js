@@ -7,6 +7,27 @@ btLapisEditar.onclick = function () {
 };
 
 
+btnVisualizar.onclick = function () {
+    window.location.assign("/pages/cadastroCrianca.aspx");
+
+    var x = document.getElementsByClassName('formulario')
+    for (var i = 0; i < x.length; i++)
+        x[i].setAttribute("disabled", true);
+};
+
+btnCloseForm.onclick = function () {
+    window.location.assign("/pages/crianca.aspx");
+};
+
+
+//// desabilita os textboxes quando clicar em Visualizar
+//btnPesquisar.onclick = function () {
+//    var x = document.getElementsByClassName('formulario')
+//    for (var i = 0; i < x.length; i++)
+//        x[i].setAttribute("disabled", true);
+//};
+
+
 
 //btOlhoVisualizar.onclick = function () {
 //    window.location.assign("/pages/cadastroCrianca.aspx");

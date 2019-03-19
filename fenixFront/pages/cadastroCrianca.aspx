@@ -8,6 +8,9 @@
      <div class="card bg-light col-12">
         <div id="titulo" class="card-header tituloFormularios">
             <label>Crianças</label>
+            <button id="btnCloseForm" type="button" class="btn btn-labeled btn-transparent" onclick="btnCloseForm()">
+                            <span class="btn-label"><i class="fa fa-window-close"></i></span>
+                        </button>   
         </div>
         <div class="card-body" id="form">
             <form>
@@ -117,4 +120,9 @@
             </form>
         </div>
     </div>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="scripts" runat="server">
+    <script src="../.js/jquery-2.1.4.js"></script>
+    <script src="../.js/crianca.js"></script>
 </asp:Content>
