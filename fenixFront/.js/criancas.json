@@ -1,0 +1,28 @@
+[
+  {
+    "dataSaida": "18/09/2017", 
+    "nome": "Rafaela", 
+    "CPF": "11225842-995", 
+    "sexo": "F", 
+    "idade": 15, 
+    "RG": 54130259, 
+    "ligadoDesligado": 1, 
+    "endereco": "somewhere3", 
+    "dataEntrada": "17/09/2017", 
+    "dataNascimento": "21/11/1995", 
+    "id": 1
+  }, 
+  {
+    "dataSaida": "", 
+    "nome": "S\u00e9rgio", 
+    "CPF": 963852, 
+    "sexo": "M", 
+    "idade": 45, 
+    "RG": 455454549, 
+    "ligadoDesligado": 1, 
+    "endereco": "walkalone", 
+    "dataEntrada": "02/02/1990", 
+    "dataNascimento": "26/01/1980", 
+    "id": 2
+  }
+]
