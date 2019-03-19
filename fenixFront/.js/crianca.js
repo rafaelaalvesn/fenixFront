@@ -1,29 +1,23 @@
-﻿var desabilitaTxt;
-
+﻿//localStorage['desabilitaTextBox'] = false;
+window.onload = function () {
+    var desabilitaTextBox;
+}
 btnNovoCadastro.onclick = function () {
     window.location.assign("/pages/cadastroCrianca.aspx");
 };
 
 btLapisEditar.onclick = function () {
+    localStorage.setItem('desabilitaTextBox', 'false');
     window.location.assign("/pages/cadastroCrianca.aspx");
-     desabilitaTxt = false;
-    desabilitaTextboxes();
+   
 };
 
 
-btnVisualizar.onclick = function () {   
-    window.location.assign("/pages/cadastroCrianca.aspx");
-     desabilitaTxt = true;
-    desabilitaTextboxes();
+btnVisualizar.onclick = function () {
+    localStorage.setItem('desabilitaTextBox', 'true');
+    window.location.assign("/pages/cadastroCrianca.aspx");   
 };
 
-desabilitaTextboxes = function () {
-    if (desabilitaTextboxes == true) {
-        var x = document.getElementsByClassName('formulario')
-        for (var i = 0; i < x.length; i++)
-            x[i].setAttribute("disabled", true);
-    };
-};
 
 
 //// desabilita os textboxes quando clicar em Visualizar
