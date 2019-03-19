@@ -1,22 +1,28 @@
-﻿btnNovoCadastro.onclick = function () {
+﻿var desabilitaTxt;
+
+btnNovoCadastro.onclick = function () {
     window.location.assign("/pages/cadastroCrianca.aspx");
 };
 
 btLapisEditar.onclick = function () {
     window.location.assign("/pages/cadastroCrianca.aspx");
+     desabilitaTxt = false;
+    desabilitaTextboxes();
 };
 
 
-btnVisualizar.onclick = function () {
+btnVisualizar.onclick = function () {   
     window.location.assign("/pages/cadastroCrianca.aspx");
-
-    var x = document.getElementsByClassName('formulario')
-    for (var i = 0; i < x.length; i++)
-        x[i].setAttribute("disabled", true);
+     desabilitaTxt = true;
+    desabilitaTextboxes();
 };
 
-btnCloseForm.onclick = function () {
-    window.location.assign("/pages/crianca.aspx");
+desabilitaTextboxes = function () {
+    if (desabilitaTextboxes == true) {
+        var x = document.getElementsByClassName('formulario')
+        for (var i = 0; i < x.length; i++)
+            x[i].setAttribute("disabled", true);
+    };
 };
 
 

@@ -123,6 +123,5 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="scripts" runat="server">
-    <script src="../.js/jquery-2.1.4.js"></script>
-    <script src="../.js/crianca.js"></script>
+    <script src="../.js/cadastroCrianca.js"></script>
 </asp:Content>

@@ -37,7 +37,7 @@
                         <button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
                             <span class="fa fa-pencil"></span>
                         </button>
-                        <button type="button" class="btn btn-default bg-transparent formulario" id="btnVisualizar" onclick="btnVisualizar()" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
+                        <button type="button" class="btn btn-default bg-transparent formulario" id="btnVisualizar" onclick="btnVisualizar()" data-toggle="tooltip" data-container="body" data-placement="top" title="Visualizar Cadastro" style="float: right">
                             <span class="fa fa-eye"></span>
                         </button>
                     </td>
@@ -78,6 +78,5 @@
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scripts" runat="server">
-    <script src="../.js/jquery-2.1.4.js"></script>
     <script src="../.js/crianca.js"></script>
 </asp:Content>
