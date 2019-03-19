@@ -26,12 +26,22 @@
     </div>
     <div align="center" id="grid">
 
+        <div class="row">
+            <div id="nomeTeste" class="coluna1 col-sm-12">
+                !______________________________!
+            </div>
+                  </div>
+
+
         <div class="card bg-light">
 
             <table class="table table-hover table1">
                 <!-- INÍCIO DA ROW-->
+
+
                 <tr>
-                    <td id="nome" class="col-8">ANA MARIA DE SOUZA PEREIRA</td>
+
+                    <td class="col-8">ANA MARIA DE SOUZA PEREIRA</td>
                     <td class="col-2">LIGADA</td>
                     <td class="col-2">
                         <button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">

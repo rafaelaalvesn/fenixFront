@@ -1,5 +1,6 @@
-﻿var desabilitaTxt;
+﻿
 
+var desabilitaTxt;
 btnNovoCadastro.onclick = function () {
     window.location.assign("/pages/cadastroCrianca.aspx");
 };
@@ -11,7 +12,7 @@ btLapisEditar.onclick = function () {
 };
 
 
-btnVisualizar.onclick = function () {   
+btnVisualizar.onclick = function () {
     window.location.assign("/pages/cadastroCrianca.aspx");
     desabilitaTxt = true;
     desabilitaTextboxes();
@@ -26,15 +27,14 @@ desabilitaTextboxes = function () {
 };
 
 
-$('input').click(function(){
+btNovoCadastro.click = function () {
     $.ajax({
-        url: 'http://www.json-generator.com/api/json/get/ceKbWczwlK?indent=2',
-        success: function (data) {
+        url: 'http://www.json-generator.com/api/json/get/ceKbWczwlK?indent=2', success: function (data) {
             alert(data);
-            $('nome').append("<p>"+this.chave1+"</p>");
+            $('nomeTeste').html(data);
         }
-    })
-}
+    });
+};
 
 //// desabilita os textboxes quando clicar em Visualizar
 //btnPesquisar.onclick = function () {
