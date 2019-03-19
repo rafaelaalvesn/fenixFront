@@ -44,7 +44,7 @@
                     <td class="col-8">ANA MARIA DE SOUZA PEREIRA</td>
                     <td class="col-2">LIGADA</td>
                     <td class="col-2">
-                        <button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
+                        <button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" onclick="btLapisEditar()" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
                             <span class="fa fa-pencil"></span>
                         </button>
                         <button type="button" class="btn btn-default bg-transparent formulario" id="btnVisualizar" onclick="btnVisualizar()" data-toggle="tooltip" data-container="body" data-placement="top" title="Visualizar Cadastro" style="float: right">
