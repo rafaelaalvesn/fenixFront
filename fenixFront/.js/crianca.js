@@ -1,77 +1,79 @@
-﻿//localStorage['desabilitaTextBox'] = false;
+﻿var criancas;
+var tipoUsuario;
+
 window.onload = function () {
-    var desabilitaTextBox;
+    tipoUsuario = localStorage['tipoUsuario'];
+    $.ajax({
+        url: "http://localhost:55571/api/jovem/lista",
+        crossDomain: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+                criancas = data;
+                listarHTML();
+            } else {
+                alert("Erro ao listar jovens.");
+            }
+        },
+        type: 'GET'
+    });
 }
+
+listarHTML = function () {
+    for (var i = 0; i < criancas.length; i++) {
+        var htmlString = '<tr>' +
+            '<td>' + criancas[i].nome + '</td>' +
+            '<td>' + (criancas[i].ligadoDesligado ? "LIGADO" : "DESLIGADO") + '</td>' +
+            '<td>';
+        if (tipoUsuario === "admin") {
+            htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" onclick="btLapisEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">' +
+                '<span class="fa fa-pencil"></span>' +
+                '</button>';
+        }
+        htmlString += '<button type="button" class="btn btn-default bg-transparent formulario" id="btnVisualizar" onclick="btnVisualizarClick('+i+')" data-toggle="tooltip" data-container="body" data-placement="top" title="Visualizar Cadastro" style="float: right">'+
+                '<span class="fa fa-eye"></span>'+
+            '</button>' +
+            '</td>' +
+            '</tr>';
+        document.getElementById('tabela-jovem').innerHTML += htmlString;
+    }
+}
+
 btnNovoCadastro.onclick = function () {
+    localStorage.setItem('jovemSelecionado', null);
     window.location.assign("/pages/cadastroCrianca.aspx");
 };
 
-btLapisEditar.onclick = function () {
+btLapisEditarClick = function (index) {
     localStorage.setItem('desabilitaTextBox', 'false');
+    localStorage.setItem('jovemSelecionado', JSON.stringify(criancas[index]));
     window.location.assign("/pages/cadastroCrianca.aspx");
-   
 };
 
-
-btnVisualizar.onclick = function () {
+btnVisualizarClick = function (index) {
     localStorage.setItem('desabilitaTextBox', 'true');
+    localStorage.setItem('jovemSelecionado', JSON.stringify(criancas[index]));
     window.location.assign("/pages/cadastroCrianca.aspx");   
 };
 
-//$('input').click(function(){
-//    $.ajax({
-//        url: 'http://www.json-generator.com/api/json/get/ceKbWczwlK?indent=2',
-//        success: function (data) {
-//            alert(data);
-//            $('nome').append("<p>"+this.chave1+"</p>");
-//        }
-//    })
-//}
-
-
-//// desabilita os textboxes quando clicar em Visualizar
-//btnPesquisar.onclick = function () {
-//    var x = document.getElementsByClassName('formulario')
-//    for (var i = 0; i < x.length; i++)
-//        x[i].setAttribute("disabled", true);
-//};
-
-
-
-//btOlhoVisualizar.onclick = function () {
-//    window.location.assign("/pages/cadastroCrianca.aspx");
-//    var x = document.getElementsByClassName('formulario')
-//    for (var i = 0; i < x.length; i++)
-//        x[i].setAttribute("disabled", true);
-//};
-
-
-/*
-var cpfDigitado = document.getElementById("txtPesquisa");
-
-$("btnPesquisar").click(function () {
-    $.post("http://www.json-generator.com/api/json/get/ceKbWczwlK?indent=2",
-        {
-            cpf: cpfDigitado
+btnPesquisar = function () {
+    debugger
+    $.ajax({
+        url: "http://localhost:55571/api/jovem/pesquisar",
+        crossDomain: true,
+        data: {
+            "dado": txtPesquisa.value
         },
-        function (data, status) {
-            var jovemPesquisado = data;
-        });
-});
-
-
-$("button").click(function () {
-    $.delete("http://localhost:5154/eliminarJovem",
-        {
-            cpf: "123123123"
-        },
-        function (data, status) {
-            if (data === true) {
-                //eliminado
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+                document.getElementById('tabela-jovem').innerHTML = '';
+                criancas = data;
+                listarHTML();
             } else {
-                //api retornou false, não deve ter encontrado o cpf 
+                alert("Ocorreu um ero na pesquisa.");
             }
-        });
-});
-
-*/
+        },
+        type: 'POST'
+    });
+}

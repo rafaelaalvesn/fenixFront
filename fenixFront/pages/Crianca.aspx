@@ -28,55 +28,13 @@
 
         <div class="card bg-light">
 
-            <table class="table table-hover table1">
-                <!-- INÍCIO DA ROW-->
-                <tr>
-                    <td id="nome" class="col-8">ANA MARIA DE SOUZA PEREIRA</td>
-                    <td class="col-2">LIGADA</td>
-                    <td class="col-2">
-                        <button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" onclick="btLapisEditar()" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
-                            <span class="fa fa-pencil"></span>
-                        </button>
-                        <button type="button" class="btn btn-default bg-transparent formulario" id="btnVisualizar" onclick="btnVisualizar()" data-toggle="tooltip" data-container="body" data-placement="top" title="Visualizar Cadastro" style="float: right">
-                            <span class="fa fa-eye"></span>
-                        </button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-8">ANA MARIA DE SOUZA PEREIRA</td>
-                    <td class="col-2">LIGADA</td>
-                    <td class="col-1">
-                </tr>
-                <!-- FIM DA ROW-->
-
-                <!-- INÍCIO DA ROW-->
-                <tr>
-                    <td class="col-6">PEDRO PAULO FERREIRA</td>
-                    <td class="col-2">DESLIGADO</td>
-                    <td class="col-2">
-                        <button type="button" class="btn btn-default bg-transparent" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
-                            <span class="fa fa-pencil"></span>
-                        </button>
-                    </td>
-                </tr>
-                <!-- FIM DA ROW-->
-
-                <!-- INÍCIO DA ROW-->
-                <tr>
-                    <td class="col-6">ITALO FABRÍCIO GOMES COURA</td>
-                    <td class="col-2">LIGADO</td>
-                    <td class="col-2">
-                        <button type="button" class="btn btn-default bg-transparent" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">
-                            <span class="fa fa-pencil"></span>
-                        </button>
-                    </td>
-                </tr>
-                <!-- FIM DA ROW-->
+            <table class="table table-hover table1" id="tabela-jovem">
+                
             </table>
         </div>
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scripts" runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../.js/crianca.js"></script>
 </asp:Content>
