@@ -85,7 +85,7 @@ btnSalvar = function () {
                 "dataSaida": dataSaida.value,
                 "id": codigo.value,
                 "idade": codigo.value,
-                "ligadoDesligado": ligadoDesligado.value,
+                "ligadoDesligado": ligadoDesligado.value == 'Ligado' ? true : false,
                 "motivoSaida": motivoSaida.value,
                 "nome": nome.value,
                 "nomeResponsavel": nomeResponsavel.value,
