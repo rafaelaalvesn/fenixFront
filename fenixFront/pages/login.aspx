@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ContentPlaceHolderID="content" runat="server">
 <div align="center" id="tela">
-    <div class="card bg-transparent col-5" id="login">
+    <div class="card bg-transparent col-5 slide-bottom" id="login">
         <div class="card-body">
             <form>
                 <div><img src="../img/fenix-logo-w.png" /></div>
