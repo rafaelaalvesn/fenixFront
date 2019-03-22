@@ -13,7 +13,7 @@
     <span id="visitas" class="circle shadow-drop-2-center">
         <img src="../img/visitor.png" /><label>Visitas</label>
     </span>
-    <span id="estoque" class="circle shadow-drop-2-center">
+    <span id="estoque" class="circle shadow-drop-2-center"  onclick="location='/pages/estoque.aspx'">
         <img src="../img/warehouse.png" /><label>Estoque</label>
     </span>
     <span id="caixa" class="circle shadow-drop-2-center">
