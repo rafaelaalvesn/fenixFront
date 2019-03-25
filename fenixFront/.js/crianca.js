@@ -25,7 +25,7 @@ listarHTML = function () {
             '<td>' + criancas[i].nome + '</td>' +
             '<td>' + (criancas[i].ligadoDesligado ? "LIGADO" : "DESLIGADO") + '</td>' +
             '<td>';
-        if (tipoUsuario === "admin") {
+        if (tipoUsuario != "medico") {
             htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" onclick="btLapisEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Cadastro" style="float: right">' +
                 '<span class="fa fa-pencil"></span>' +
                 '</button>';

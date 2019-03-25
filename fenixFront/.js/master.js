@@ -1,4 +1,5 @@
-﻿
+﻿var tipoUsuario;
+
 //habilita os textboxes quando clicar em NovoCadastro ou Editar
 //novoCadastro.onclick = function () {
 //    var x = document.getElementsByClassName('formulario')   
@@ -23,9 +24,20 @@
 
 //coloca o campo CPF a funcionar certinho
 //adiciona mascara de cpf
+//window.onload = function () {
+//    alert('Teste');
+//}
 
 
 $(document).ready(function () {
-    $('#cpf').mask('000.000.000-00');
-    $('#cep').mask('00000-000');
+    $('#CEP').mask('00000-000');
+    $('#CPF').mask('000.000.000-00');
+});
+
+$(document).ready(function () {
+    tipoUsuario = localStorage['tipoUsuario'];
+    if (tipoUsuario != "admin") {
+        var x = document.getElementById('dropDownControleDeUsuario');
+        x.remove();
+    }
 });

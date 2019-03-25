@@ -35,9 +35,10 @@
             <table class="table table-hover table1" id="tabela-jovem">
             </table>
         </div>
-    </div>
+    </div> 
 </asp:Content>
-<asp:Content ContentPlaceHolderID="scripts" runat="server">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
     <script src="../.js/crianca.js"></script>
-</asp:Content>
+        </asp:Content>
+   
+

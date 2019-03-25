@@ -25,6 +25,6 @@
         </div>
         <script src="~/Scripts/ToDoList.js"></script>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="scripts" runat="server">
+<asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
     <script src="../.js/home.js"></script>
 </asp:Content>

@@ -107,3 +107,10 @@ btnSalvar = function () {
         });
     }
 }
+
+$(document).ready(function () {
+    var $CEP = $('#CEP');
+    var $CPF = $('#CPF');
+    $CEP.mask('00000-000', { reverse: true });
+    $CPF.mask('000.000.000-00', { reverse: true });
+});

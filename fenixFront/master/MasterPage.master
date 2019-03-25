@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>Abrigo Fênix</title>
-     <link rel="icon" type="image/gif" href="../img/fenix-logo-w.png" />
+    <link rel="icon" type="image/gif" href="../img/fenix-logo-w.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/master.css" rel="stylesheet" />
@@ -40,12 +40,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/pages/estoque.aspx">Estoque</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Controle de Usuários</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/pages/login.aspx">Sair</a>
+                        </li>                   
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-cog" style="color:white"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://www.google.com.br" id="dropDownControleDeUsuario">Controle de Usuários</a>
+                                <a class="dropdown-item" href="/pages/login.aspx" id="dropDownSair">Sair</a>
+                
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -58,17 +61,23 @@
         </div>
 
     </div>
-    <asp:ContentPlaceHolder ID="scripts" runat="server">
-        <script src="../.js/jquery-2.1.4.js"></script>
-        <script src="../.js/jquery.mask.js"></script>
+    <div class="scriptsMaster">
+
+       <%-- <script src="../.js/jquery-2.1.4.js"></script>--%>
+       <%-- <script src="../.js/jquery.mask.js"></script>--%>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>       
+         <script src="../.js/jquery.mask.min.js"></script>
+        <script src="../.js/bootstrap.min.js"></script>
         <script src="../.js/master.js"></script>
-    </asp:ContentPlaceHolder>
+   
+        <asp:ContentPlaceHolder ID="scriptsPagina" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="footer">
+        <p>2019 - Abrigo Fênix</p>
+    </div>
 </body>
-<footer>
-    <asp:contentplaceholder id="footer" runat="server">
-            
-                <p>2019 - Abrigo Fênix</p>
-           
-        </asp:contentplaceholder>
-</footer>
+
+
 </html>
