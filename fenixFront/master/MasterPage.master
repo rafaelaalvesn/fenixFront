@@ -33,10 +33,10 @@
                             <a class="nav-link" href="/pages/crianca.aspx">Crianças</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Visitas</a>
+                            <a class="nav-link" href="/pages/Visitas.aspx">Visitas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Caixa</a>
+                            <a class="nav-link" href="/pages/Caixa.aspx">Caixa</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/pages/estoque.aspx">Estoque</a>
