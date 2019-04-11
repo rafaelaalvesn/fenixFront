@@ -71,7 +71,7 @@ btnPesquisar = function () {
                 criancas = data;
                 listarHTML();
             } else {
-                alert("Ocorreu um ero na pesquisa.");
+                alert("Ocorreu um erro na pesquisa.");
             }
         },
         type: 'POST'

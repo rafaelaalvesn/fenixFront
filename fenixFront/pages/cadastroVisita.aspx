@@ -3,66 +3,63 @@
     <link href="../css/formulariosCadastro.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ContentPlaceHolderID="content" runat="server">
-     <div class="card bg-light col-12">
+     <div class="card bg-light col-8 cardForm">
         <div id="titulo" class="card-header tituloFormularios">
             <label>Visitas</label>
             <button id="btnCloseForm" type="button" class="btn btn-labeled btn-transparent" onclick="btnCloseForm()">
                             <span class="btn-label"><i class="fa fa-window-close"></i></span>
                         </button>   
         </div>
-        <div class="card-body" id="form">
-            <form>
-        
-
-                <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label>Data</label>
+        <div class="card-body" id="form" >
+            <form>    
+               <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label class="obrigatorio">Data</label>
                         <input type="date" class="form-control" id="dataVisita">
                     </div>
-                    <div class="form-group  col-md-5">
-                        <label class="obrigatorio">Hora</label>
+                    <div class="form-group col-md-2">
+                        <label>Hora</label>
                         <input type="text" class="form-control formulario" id="horaVisita">
                     </div>
-                    <div class="form-group  col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Tipo da Visita</label>
-                        <select class="form-control formulario" id="visitaColetivaIndiviual">
-                            
+                        <select class="form-control formulario" id="visitaColetivaIndiviual">                          
                         </select>
                     </div>                  
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label>Nome do Jovem</label>
                         <input type="text" class="form-control formulario" id="nomeJovem">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label>Nº da ordem judicial</label>
+                    <div class="form-group col-md-2">
+                        <label>Nº ordem judicial</label>
                         <input type="text" class="form-control formulario" id="numOrdemJudicial">
                     </div>                   
                 </div>
                 <hr>
                    <div class="form-row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-8">
                     <h4>Visitantes</h4>
                             </div>
                        </div>
                 <div class="form-row">                 
                     <div class="form-group col-md-4">
-                        <label>Nome</label>
+                        <label class="obrigatorio">Nome</label>
                         <input type="text" class="form-control formulario" id="nomeVisitante">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputCity">CPF</label>
+                    <div class="form-group col-md-2">
+                        <label>CPF</label>
                         <input type="text" class="form-control formulario" id="CPF">
                     </div>
                     <div class="form-group col-md-2">
                         <label>Telefone</label>
-                        <input type="text" class="form-control formulario" id="numero">
+                        <input type="text" class="form-control formulario" id="Telefone">
                     </div>                  
                 </div>              
                 <div class="form-row">               
-                    <div class="form-group col-md-12" align="right">
+                    <div class="form-group col-md-8" align="right">
                         <button type="button" class="btn btn-labeled btn-preto formulario" onclick="btnSalvar()">
                             <span class="btn-label"><i class="fa fa-check"></i></span>&nbspSalvar
                         </button>
