@@ -1,0 +1,49 @@
+﻿#topo {
+    padding-bottom: 30px;
+    margin-left: -15px;
+}
+
+.container {
+    padding-right: 0px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.tituloPagina {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 50px;
+}
+
+.divTitulo{
+    padding-left: 0px;
+}
+
+.divBtnTransacao{
+padding-right: 0px;
+}
+
+.teste {
+    width: 100%;
+    height: 10px;
+    background: red;
+    margin: auto;
+}
+
+#btnNovaTransacao{
+    width: 140px;
+    text-align: center; 
+}
+
+.btn-label{
+    text-align:center;
+    font-size: 10px;
+
+}

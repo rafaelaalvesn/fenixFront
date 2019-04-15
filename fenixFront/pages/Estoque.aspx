@@ -45,7 +45,7 @@
     </div>
 
 </asp:Content>
-<asp:Content ContentPlaceHolderID="scripts" runat="server">
+<asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
     <script src="../.js/bootstrap.min.js"></script>
 </asp:Content>
 
