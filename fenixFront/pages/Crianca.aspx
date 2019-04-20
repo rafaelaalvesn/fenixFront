@@ -14,15 +14,16 @@
             
             <div class="container col-12">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-12">
                         <input type="text" class="form-control formulario" placeholder="Pesquisar Jovem" id="txtPesquisa">
                     </div>
-                    <div class="col col-md-1">
+                    <div class="col-md-1 col-sm-12">
                         <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
                     </div>
-                    <div class="col col-md-7" align="right">
+                   
+                    <div class="col-md-7 col-sm-12" align="right">
                         <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
-                            <span class="btn-label"><i class="fa fa-plus"></i></span>&nbspNovo Cadastro
+                            <span class="btn-label"><i class="fa fa-plus"></i>&nbspNovo Cadastro</span>
                         </button>
                     </div>
                 </div>

@@ -9,12 +9,12 @@
 </asp:Content>
 <asp:Content ContentPlaceHolderID="content" runat="server">
     <div align="center" id="tela">
-        <div class="card bg-transparent col-5 slide-bottom" id="login">
+        <div class="card col-md-5 col-sm-12 slide-bottom" id="login">
             <div class="card-body">
                 <form>
                     <div>
                         <img src="../img/fenix-logo-w.png" /></div>
-                    <label id="textTitle">ABRIGO FÊNIX </label>
+                    <label id="textTitle" class="d-none d-md-block">ABRIGO FÊNIX </label>
                     <div class="form-group">
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Login">
                     </div>

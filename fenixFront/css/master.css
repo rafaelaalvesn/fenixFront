@@ -9,10 +9,11 @@ body {
 }
 
 .conteudoPagina {
-
     height: auto;
-    padding-left: 100px;
-    padding-right: 100px;
+    margin: auto;
+    padding-bottom: 50px;
+    /*padding-left: 100px;
+    padding-right: 100px;*/
 }
 .logotipo {
     position: relative;
@@ -58,7 +59,17 @@ body {
     color: white;
 }
 
-#footer{
-    position: center;
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
 
 }
+
+#footer p {
+        margin-top: 1%;
+    }
