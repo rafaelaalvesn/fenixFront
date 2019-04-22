@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div align="center" id="grid">
+   <%-- <div align="center" id="grid">
         <div class="card bg-light">
 
             <table class="table table-hover table1" id="tabela-visitas">
@@ -46,7 +46,16 @@
             </tr>
             </table>
         </div>
+    </div> --%>
+
+     <div align="center" id="grid">
+        <div class="card bg-light">
+
+            <table class="table table-hover table1" id="tabela-visitas">
+            </table>
+        </div>
     </div> 
+
 </asp:Content>
   <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
     <script src="../.js/visitas.js"></script>
