@@ -14,11 +14,11 @@
 
             <div class="container col-12">
                 <div class="row">
-                    <div class="col-md-2">
-                        <h6><span class="label label-default">Filtrar por Categoria</span></h6>
+                    <div class="col-md-6 col-sm-12">
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Selecione Categoria
+<%--                            <h6><span class="label label-default">Filtrar por Categoria</span></h6>--%>
+                            <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filtrar por Categoria
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="#">Alimentos</a>
@@ -28,9 +28,10 @@
                         </div>
                     </div>
 
-                    <div class="col-md-7 col-sm-12" align="right">
-                        <button type="button" class="btn btn-labeled btn-preto" id="btnPesquisar" onclick="btnPesquisar()">
-                            <span class="btn-label"><i class="fa fa-search"></i>&nbspPesquisar</span>
+                    <div class="col-md-6 col-sm-12  btnPesquisar" align="right">
+<%--                        <h6><span class="label label-default">Adicionar novo Alimento</span></h6>--%>
+                        <button type="button" class="btn btn-labeled btn-preto" id="btnAdicionar" onclick="btnAdicionar()">
+                            <span class="btn-label"><i class="fa fa-plus"></i>&nbspAdicionar</span>
                         </button>
                     </div>
                     <%--<div class="col col-md-6">
