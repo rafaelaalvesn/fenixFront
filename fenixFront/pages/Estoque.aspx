@@ -28,9 +28,8 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-12  btnPesquisar" align="right">
-<%--                        <h6><span class="label label-default">Adicionar novo Alimento</span></h6>--%>
-                        <button type="button" class="btn btn-labeled btn-preto" id="btnAdicionar" onclick="btnAdicionar()">
+                    <div class="col-md-6 col-sm-12  btnAdicionar" align="right">
+                        <button type="button" class="btn btn-labeled btn-preto" id="btnAdicionar" onclick="window.location.href='cadastroEstoque.aspx'">
                             <span class="btn-label"><i class="fa fa-plus"></i>&nbspAdicionar</span>
                         </button>
                     </div>
