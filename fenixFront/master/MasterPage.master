@@ -70,7 +70,7 @@
          <script src="../.js/jquery.mask.min.js"></script>
         <script src="../.js/bootstrap.min.js"></script>
         <script src="../.js/master.js"></script>
-   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
         <asp:ContentPlaceHolder ID="scriptsPagina" runat="server">
         </asp:ContentPlaceHolder>
     </div>

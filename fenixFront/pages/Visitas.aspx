@@ -13,13 +13,13 @@
            
             <div class="container col-12">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <input type="date" class="form-control formulario" placeholder="Pesquisar por data" id="txtPesquisa">
                     </div>
                     <div class="col col-md-1">
                         <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
                     </div>
-                    <div class="col col-md-9" align="right">
+                    <div class="col col-md-8" align="right">
                         <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
                             <span class="btn-label"><i class="fa fa-plus"></i></span>&nbspNova Visita
                         </button>
@@ -52,6 +52,14 @@
         <div class="card bg-light">
 
             <table class="table table-hover table1" id="tabela-visitas">
+                        <thead>
+            <tr>
+              <th scope="col">Jovem</th>
+              <th scope="col">Visitante</th>
+              <th scope="col">Data</th>
+              <th scope="col">Hora</th>
+            </tr>
+          </thead>
             </table>
         </div>
     </div> 

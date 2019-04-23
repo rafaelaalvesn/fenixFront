@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-8" align="right">
+                    <div class="form-group col-md-12" align="right">
                         <button type="button" class="btn btn-labeled btn-preto formulario" onclick="btnSalvar()">
                             <span class="btn-label"><i class="fa fa-check"></i></span>&nbspSalvar
                         </button>

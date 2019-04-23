@@ -23,10 +23,11 @@ window.onload = function () {
 listarHTML = function () {
     for (var i = 0; i < visitas.length; i++) {
         var htmlString = '<tr>' +
-            '<td>' + visitas[i].nome + '</td>' +
+            '<td>' + getNomeJovem(visitas[i].idJovemVisitado) + '</td>' +
+               //'<td>' +visitas[i].idJovemVisitado + '</td>' +
             '<td>' + visitas[i].nomeVisitante + '</td>' +
-             '<td>' + visitas[i].dataVisita + '</td>' +
-            '<td>' + visitas[i].dataVisita + '</td>' +           
+             '<td>' + formataData(visitas[i].dataVisita) + '</td>' +
+            '<td>' + formataHora(visitas[i].horaVisita) + '</td>' +
             '<td>';
         if (tipoUsuario != "medico") {
             htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" onclick="btLapisEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Visita" style="float: right">' +
@@ -42,9 +43,21 @@ listarHTML = function () {
     }
 }
 
-
-
 btnNovoCadastro.onclick = function () {
     //localStorage.setItem('jovemSelecionado', null);
     window.location.assign("/pages/cadastroVisita.aspx");
 };
+
+
+formataData = function (dataFormatSQL) {
+    moment.locale('pt-br');
+    var dataPadraoBR = (moment(dataFormatSQL).format('DD/MM/YYYY'));
+    return dataPadraoBR
+}
+
+
+formataHora = function (horaFormatSQL) {
+    var horaPadraoBR = horaFormatSQL.substring(0, 5)
+    return horaPadraoBR
+}
+
