@@ -54,6 +54,16 @@
         <div class="card bg-light">
 
             <table class="table table-hover table1" id="tabela-estoque">
+
+                <thead>
+            <tr>
+              <th scope="col">Categoria</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Unidade</th>
+              <th scope="col">Data Validade</th>
+            </tr>
+          </thead>
+
             </table>
         </div>
     </div>
