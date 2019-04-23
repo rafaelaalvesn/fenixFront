@@ -15,7 +15,7 @@
             <div class="container col-12">
                 <div class="row">
                     <div class="col-md-2">
-                        <h6><span class="label label-default">Categorias</span></h6>
+                        <h6><span class="label label-default">Filtrar por Categoria</span></h6>
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Selecione Categoria
@@ -27,7 +27,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col col-md-6">
+
+                    <div class="col-md-7 col-sm-12" align="right">
+                        <button type="button" class="btn btn-labeled btn-preto" id="btnPesquisar" onclick="btnPesquisar()">
+                            <span class="btn-label"><i class="fa fa-search"></i>&nbspPesquisar</span>
+                        </button>
+                    </div>
+                    <%--<div class="col col-md-6">
                         <h6><span class="label label-default">Descrição</span></h6>
                         <input type="text" class="form-control formulario" placeholder="Descrição" id="txtDescriçãoMatEstoque">
                     </div>
@@ -38,15 +44,22 @@
                     <div class="col col-md-2">
                         <h6><span class="label label-default">Valor Unit</span></h6>
                         <input type="text" class="form-control formulario" placeholder="Descrição" id="txtVlUnitMatEstoque">
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
     </div>
 
+    <div align="center" id="grid">
+        <div class="card bg-light">
+
+            <table class="table table-hover table1" id="tabela-estoque">
+            </table>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
-    <script src="../.js/bootstrap.min.js"></script>
+    <script src="../.js/Estoque.js"></script>
 </asp:Content>
 
 
