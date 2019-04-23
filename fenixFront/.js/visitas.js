@@ -1,5 +1,7 @@
 ﻿var visitas;
 var tipoUsuario;
+var nomeJovem
+var criancas;
 
 window.onload = function () {
     tipoUsuario = localStorage['tipoUsuario'];
@@ -21,10 +23,10 @@ window.onload = function () {
 
 
 listarHTML = function () {
+
     for (var i = 0; i < visitas.length; i++) {
-        var htmlString = '<tr>' +
-            '<td>' + getNomeJovem(visitas[i].idJovemVisitado) + '</td>' +
-               //'<td>' +visitas[i].idJovemVisitado + '</td>' +
+        var htmlString = '<tr>' +    
+               '<td>' + getNomeJovem(visitas[i].idJovemVisitado) + '</td>' +
             '<td>' + visitas[i].nomeVisitante + '</td>' +
              '<td>' + formataData(visitas[i].dataVisita) + '</td>' +
             '<td>' + formataHora(visitas[i].horaVisita) + '</td>' +
@@ -61,3 +63,26 @@ formataHora = function (horaFormatSQL) {
     return horaPadraoBR
 }
 
+
+
+getNomeJovem = function (idJovem) {
+    debugger
+    $.ajax({
+        url: "http://localhost:55571/api/jovem/pesquisar",
+        crossDomain: true,
+        data: {
+            "dado": idJovem
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {             
+               criancas = data;
+               nomeJovem = criancas[0].nome;                
+            } else {
+                alert("Ocorreu um erro na pesquisa.");
+            }
+        },
+        type: 'POST'
+    });
+
+}

@@ -57,7 +57,7 @@ btnVisualizarClick = function (index) {
     window.location.assign("/pages/cadastroCrianca.aspx");   
 };
 
-btnPesquisar = function () {
+window.btnPesquisar = function () {
     debugger
     $.ajax({
         url: "http://localhost:55571/api/jovem/pesquisar",
