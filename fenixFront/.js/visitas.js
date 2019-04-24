@@ -1,8 +1,8 @@
 ﻿var visitas;
 var tipoUsuario;
-var nomeJovem
+var nomeJovem;
 var criancas;
-nomeJovemm = localStorage['nomeJovemm'];
+nomeJovem = localStorage['nomeJovem'];
 
 window.onload = function () {
     tipoUsuario = localStorage['tipoUsuario'];
