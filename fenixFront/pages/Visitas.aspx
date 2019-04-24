@@ -14,10 +14,10 @@
             <div class="container col-12">
                 <div class="row">
                     <div class="col-md-3">
-                        <input type="date" class="form-control formulario" placeholder="Pesquisar por data" id="txtPesquisa">
+                        <input type="date" class="form-control formulario" placeholder="Pesquisar por data" id="txtPesquisaVisita">
                     </div>
                     <div class="col col-md-1">
-                        <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
+                        <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisarVisita()">Pesquisar</button>
                     </div>
                     <div class="col col-md-8" align="right">
                         <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
