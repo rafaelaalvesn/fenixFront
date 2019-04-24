@@ -1,5 +1,6 @@
 ﻿var estoque;
 var tipoUsuario;
+var nomeCategoria;
 
 window.onload = function () {
     tipoUsuario = localStorage['tipoUsuario'];
@@ -39,9 +40,12 @@ window.onload = function () {
 
 
 preencherDropdown = function () {
+  
     for (var i = 0; i < estoqueCategorias.length; i++) {
+        nomeCategoria = estoqueCategorias[i];
+
     var htmlDropdownString = 
-         '<a class="dropdown-item" href="#">' + estoqueCategorias[i] + '</a>';
+         '<a class="dropdown-item" onclick="teste()">' + nomeCategoria + '</a>';
     document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
         }
 }
@@ -74,3 +78,10 @@ listarHTML = function () {
 //    //localStorage.setItem('jovemSelecionado', null);
 //    window.location.assign("/pages/cadastroVisita.aspx");
 //};
+
+
+teste = function ( a) {
+
+
+    alert(a);
+}
