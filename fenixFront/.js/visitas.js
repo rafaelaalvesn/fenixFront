@@ -2,6 +2,7 @@
 var tipoUsuario;
 var nomeJovem
 var criancas;
+nomeJovemm = localStorage['nomeJovemm'];
 
 window.onload = function () {
     tipoUsuario = localStorage['tipoUsuario'];
@@ -19,14 +20,34 @@ window.onload = function () {
         },
         type: 'GET'
     });
+
+    $.ajax({
+        url: "http://localhost:55571/api/jovem/pesquisar",
+        crossDomain: true,
+        data: {
+            "dado": 46 /*ajeitar p/ pegar o id do jovem do grid*/
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+                criancas = data;
+
+            } else {
+                alert("Ocorreu um erro na pesquisa.");
+            }
+        },
+        type: 'POST'
+    });
+    a();
 }
 
 
 listarHTML = function () {
-
-    for (var i = 0; i < visitas.length; i++) {
+    
+    for (var i = 0; i < visitas.length; i++) {   
         var htmlString = '<tr>' +    
-               '<td>' + getNomeJovem(visitas[i].idJovemVisitado) + '</td>' +
+            //'<td>' + visitas[i].idJovemVisitado + '</td>' +
+            '<td>' + criancas[0].nome + '</td>' +
             '<td>' + visitas[i].nomeVisitante + '</td>' +
              '<td>' + formataData(visitas[i].dataVisita) + '</td>' +
             '<td>' + formataHora(visitas[i].horaVisita) + '</td>' +
@@ -64,25 +85,20 @@ formataHora = function (horaFormatSQL) {
 }
 
 
-
-getNomeJovem = function (idJovem) {
-    debugger
+a = function () {
+    tipoUsuario = localStorage['tipoUsuario'];
     $.ajax({
-        url: "http://localhost:55571/api/jovem/pesquisar",
+        url: "http://localhost:55571/api/jovem/lista",
         crossDomain: true,
-        data: {
-            "dado": idJovem
-        },
         dataType: 'json',
         success: function (data) {
-            if (data !== null) {             
-               criancas = data;
-               nomeJovem = criancas[0].nome;                
+            if (data !== null) {
+                criancas = data;
             } else {
-                alert("Ocorreu um erro na pesquisa.");
+                alert("Erro ao listar jovens.");
             }
         },
-        type: 'POST'
+        type: 'GET'
     });
-
 }
+
