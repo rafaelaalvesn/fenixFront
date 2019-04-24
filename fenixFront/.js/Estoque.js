@@ -35,7 +35,7 @@ window.onload = function () {
         type: 'GET'
     });
 
-
+   ;
 }
 
 
@@ -43,17 +43,17 @@ preencherDropdown = function () {
   
     for (var i = 0; i < estoqueCategorias.length; i++) {
         nomeCategoria = estoqueCategorias[i];
-
     var htmlDropdownString = 
-         '<a class="dropdown-item" onclick="teste()">' + nomeCategoria + '</a>';
+         '<a class="dropdown-item" id="' + i + '">' + nomeCategoria + '</a>';
     document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
-        }
+    }
+
 }
 
 listarHTML = function () {
     for (var i = 0; i < estoque.length; i++) {
         var htmlString = '<tr>' +
-            '<td>' + estoque[i].categoria + '</td>' +
+            '<td>' + estoque[i].idCategoria + '</td>' +
             '<td>' + estoque[i].descricao + '</td>' +
             '<td>' + estoque[i].unidade + '</td>' +
             '<td>' + estoque[i].dataValidade + '</td>' +
@@ -80,8 +80,8 @@ listarHTML = function () {
 //};
 
 
-teste = function ( a) {
+//$('#nomeCat').click(function ()
+//{
+//    a = document.getElementById('nomeCat').value;
 
-
-    alert(a);
-}
+//});
