@@ -17,8 +17,34 @@ window.onload = function () {
         },
         type: 'GET'
     });
+
+
+    $.ajax({
+        url: "http://localhost:55571/api/estoque/listaCategorias",
+        crossDomain: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+                estoqueCategorias = data;
+                preencherDropdown();
+            } else {
+                alert("Erro ao listar categorias.");
+            }
+        },
+        type: 'GET'
+    });
+
+
 }
 
+
+preencherDropdown = function () {
+    for (var i = 0; i < estoqueCategorias.length; i++) {
+    var htmlDropdownString = 
+         '<a class="dropdown-item" href="#">' + estoqueCategorias[i] + '</a>';
+    document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
+        }
+}
 
 listarHTML = function () {
     for (var i = 0; i < estoque.length; i++) {
