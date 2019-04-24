@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cadastroCrianca.aspx.cs" Inherits="pages_cadastroCrianca" MasterPageFile="~/master/MasterPage.master" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cadastroCrianca.aspx.cs" Inherits="pages_cadastroCrianca" MasterPageFile="~/master/MasterPage.master" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
     <link href="../css/formulariosCadastro.css" rel="stylesheet" />
@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>CPF</label>
-                        <input type="text" class="form-control formulario" id="CPF">
+                        <input data-mask="000.000.000-00" data-mask-selectonfocus="true" type="text" class="form-control formulario" id="CPF">
                     </div>
                     <div class="form-group  col-md-4">
                         <label class="obrigatorio">Data de Nasc.</label>
@@ -55,7 +55,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>CEP</label>
-                        <input type="text" class="form-control formulario" id="CEP">
+                        <input data-mask="00.000-000" data-mask-selectonfocus="true" type="text" class="form-control formulario" id="CEP">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputCity">Rua</label>

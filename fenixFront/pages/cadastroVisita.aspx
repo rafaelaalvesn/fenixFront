@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cadastroVisita.aspx.cs" Inherits="pages_cadastroVisita" MasterPageFile="~/master/MasterPage.master" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cadastroVisita.aspx.cs" Inherits="pages_cadastroVisita" MasterPageFile="~/master/MasterPage.master" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
     <link href="../css/formulariosCadastro.css" rel="stylesheet" />
@@ -13,35 +13,38 @@
         </div>
         <div class="card-body" id="form">
             <form>
-                
+
                 <div class="form-row">
                     <div class="form-group col-md-7">
                         <label>Nome do Jovem</label>
                         <input type="text" class="form-control formulario" id="nomeJovem">
                     </div>
+
                     <div class="form-group col-md-5">
                         <label>Nº ordem judicial</label>
-                        <input type="text" class="form-control formulario" id="numOrdemJudicial">
+                        <input type="number" class="form-control formulario" id="numOrdemJudicial">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label class="obrigatorio">Data</label>
-                        <input type="date" class="form-control" id="dataVisita">
+                        <input type="date" class="form-control formulario" id="dataVisita">
                     </div>
                     <div class="form-group col-md-3">
                         <label>Hora</label>
-                        <input type="text" class="form-control formulario" id="horaVisita">
+                        <input type="time" class="form-control formulario" id="horaVisita">
                     </div>
                     <div class="form-group col-md-5">
                         <label>Tipo da Visita</label>
-                        <select class="form-control formulario" id="visitaColetivaIndiviual">
+                        <select class="form-control formulario" id="tipoVisita">
+                            <option value="1">Individual</option>
+                            <option value="2">Coletiva</option>
                         </select>
                     </div>
                 </div>
 
-                
+
                 <hr>
                 <div class="form-row">
                     <div class="form-group col-md-12">
@@ -55,11 +58,11 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label>CPF</label>
-                        <input type="text" class="form-control formulario" id="CPF">
+                        <input data-mask="000.000.000-00" data-mask-selectonfocus="true"  type="text" class="form-control formulario" id="cpfVisitante">
                     </div>
                     <div class="form-group col-md-3">
                         <label>Telefone</label>
-                        <input type="text" class="form-control formulario" id="Telefone">
+                        <input data-mask="(00) 0000-0000" data-mask-selectonfocus="true" type="text" class="form-control formulario" id="TELVisitante">
                     </div>
                 </div>
                 <div class="form-row">

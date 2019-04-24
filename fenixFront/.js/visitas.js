@@ -53,7 +53,7 @@ listarHTML = function () {
             '<td>' + formataHora(visitas[i].horaVisita) + '</td>' +
             '<td>';
         if (tipoUsuario != "medico") {
-            htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" onclick="btLapisEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Visita" style="float: right">' +
+            htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btLapisEditar" onclick="btnLapisEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Visita" style="float: right">' +
                 '<span class="fa fa-pencil"></span>' +
                 '</button>';
         }
@@ -66,8 +66,30 @@ listarHTML = function () {
     }
 }
 
+btnVisualizarClick = function (index) {
+    localStorage.setItem('desabilitaTextBox', 'true');
+    localStorage.setItem('visitaSelecionada', JSON.stringify(visitas[index]));
+    delete criancas[0].Visita;
+    localStorage.setItem('jovemSelecionado', JSON.stringify(criancas[0]));
+    window.location.assign("/pages/cadastroVisita.aspx");
+};
+
+//btnNovoCadastro.onclick = function () {
+//    //localStorage.setItem('jovemSelecionado', null);
+//    window.location.assign("/pages/cadastroVisita.aspx");
+//};
+
 btnNovoCadastro.onclick = function () {
-    //localStorage.setItem('jovemSelecionado', null);
+    localStorage.setItem('desabilitaTextBox', 'false');
+    localStorage.setItem('visitaSelecionada', null);
+    window.location.assign("/pages/cadastroVisita.aspx");
+};
+
+btnLapisEditarClick = function (index) {
+    localStorage.setItem('desabilitaTextBox', 'false');
+    localStorage.setItem('visitaSelecionada', JSON.stringify(visitas[index]));
+    delete criancas[0].Visita;
+    localStorage.setItem('jovemSelecionado', JSON.stringify(criancas[0]));
     window.location.assign("/pages/cadastroVisita.aspx");
 };
 
@@ -95,10 +117,9 @@ a = function () {
             if (data !== null) {
                 criancas = data;
             } else {
-                alert("Erro ao listar jovens.");
+                alert("Erro ao listar visitas.");
             }
         },
         type: 'GET'
     });
 }
-
