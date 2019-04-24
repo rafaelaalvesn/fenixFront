@@ -4,9 +4,9 @@
     <link href="../css/formulariosCadastro.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ContentPlaceHolderID="content" runat="server">
-    <div class="card bg-light col-12 cardForm">
+    <div class="card bg-light cardForm">
         <div id="titulo" class="card-header tituloFormularios">
-            <label>Cadastro de Estoque</label>
+            <label class="col-11">Cadastro de Estoque</label>
             <button id="btnCloseForm" type="button" class="btn btn-labeled btn-transparent" onclick="btnCloseForm()">
                 <span class="btn-label"><i class="fa fa-window-close"></i></span>
             </button>
@@ -23,9 +23,7 @@
                                 <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Categoria do Produto
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Material Higiênico</a>
-                                    <a class="dropdown-item" href="#">Alimento</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownCategorias">
                                 </div>
                             </div>
                             <%--</div>--%>
@@ -42,6 +40,13 @@
                             <label>Quantidade</label>
                             <input type="text" class="form-control formulario" id="quantidadeEstoque">
                         </div>
+                    </div>
+                </div>
+                 <div class="form-row">
+                    <div class="form-group col-md-12" align="right">
+                        <button type="button" class="btn btn-labeled btn-preto formulario" onclick="btnSalvar()">
+                            <span class="btn-label"><i class="fa fa-check"></i></span>&nbspSalvar
+                        </button>
                     </div>
                 </div>
             </form>

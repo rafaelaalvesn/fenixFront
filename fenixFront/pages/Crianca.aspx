@@ -9,7 +9,7 @@
         <div>
 
             <div class="container col-12">
-                <h5 class="card-header bg-transparent tituloPagina">Crianças</h5>
+                <h5 class="card-header bg-transparent tituloPagina">Jovens</h5>
             </div>
             
             <div class="container col-12">

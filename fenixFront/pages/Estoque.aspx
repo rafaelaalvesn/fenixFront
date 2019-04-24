@@ -20,10 +20,10 @@
                             <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Filtrar por Categoria
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Alimentos</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownCategorias">
+                              <%--  <a class="dropdown-item" href="#">Alimentos</a>
                                 <a class="dropdown-item" href="#">Móveis</a>
-                                <a class="dropdown-item" href="#">Material Higiênico</a>
+                                <a class="dropdown-item" href="#">Material Higiênico</a>--%>
                             </div>
                         </div>
                     </div>
