@@ -3,13 +3,15 @@
 };
 
 var visitaSelecionada;
-var jovemSelecionado;
+var nomeJovem = '';
 var formDesabilitado;
 
 window.onload = function () {
     desabilitado = localStorage['desabilitaTextBox'];
     visitaSelecionada = JSON.parse(localStorage['visitaSelecionada']);
-    jovemSelecionado = JSON.parse(localStorage['jovemSelecionado']);
+    if (localStorage['nomeJovem'] != null) {
+        nomeJovem = JSON.parse(localStorage['nomeJovem']);
+    }
 
     if (desabilitado === 'true') {
         var x = document.getElementsByClassName('formulario')
@@ -22,7 +24,7 @@ window.onload = function () {
             x[i].removeAttribute("disabled");
     }
     if (visitaSelecionada != null) {
-        nomeJovem.value = jovemSelecionado.nome;
+        nomeJovem.value = nomeJovem;
         numOrdemJudicial.value = visitaSelecionada.numOrdemJudicial;
         dataVisita.value = new Date(visitaSelecionada.dataVisita).yyyymmdd();
         horaVisita.value = visitaSelecionada.horaVisita;

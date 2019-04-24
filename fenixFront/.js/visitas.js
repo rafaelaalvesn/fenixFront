@@ -1,8 +1,6 @@
 ﻿var visitas;
 var tipoUsuario;
-var nomeJovem;
 var criancas;
-nomeJovem = localStorage['nomeJovem'];
 
 window.onload = function () {
     tipoUsuario = localStorage['tipoUsuario'];
@@ -43,10 +41,10 @@ window.onload = function () {
 
 
 listarHTML = function () {
-    
+ 
     for (var i = 0; i < visitas.length; i++) {   
         var htmlString = '<tr>' +    
-            '<td>' + visitas[i].idJovemVisitado + '</td>' +
+            '<td>' + (visitas[i].Jovem && visitas[i].Jovem.nome? visitas[i].Jovem.nome : "Sem nome")+ '</td>' +
             //'<td>' + criancas[0].nome + '</td>' +
             '<td>' + visitas[i].nomeVisitante + '</td>' +
              '<td>' + formataData(visitas[i].dataVisita) + '</td>' +
@@ -69,8 +67,10 @@ listarHTML = function () {
 btnVisualizarClick = function (index) {
     localStorage.setItem('desabilitaTextBox', 'true');
     localStorage.setItem('visitaSelecionada', JSON.stringify(visitas[index]));
-    delete criancas[0].Visita;
-    localStorage.setItem('jovemSelecionado', JSON.stringify(criancas[0]));
+
+    if (visitas[index].Jovem != null && visitas[index].Jovem.nome != null) {
+        localStorage.setItem('nomeJovem', JSON.stringify(visitas[index].Jovem.nome));
+    }
     window.location.assign("/pages/cadastroVisita.aspx");
 };
 
@@ -88,8 +88,11 @@ btnNovoCadastro.onclick = function () {
 btnLapisEditarClick = function (index) {
     localStorage.setItem('desabilitaTextBox', 'false');
     localStorage.setItem('visitaSelecionada', JSON.stringify(visitas[index]));
-    delete criancas[0].Visita;
-    localStorage.setItem('jovemSelecionado', JSON.stringify(criancas[0]));
+
+    if (visitas[index].Jovem != null && visitas[index].Jovem.nome != null) {
+        localStorage.setItem('nomeJovem', JSON.stringify(visitas[index].Jovem.nome));
+    }
+
     window.location.assign("/pages/cadastroVisita.aspx");
 };
 
