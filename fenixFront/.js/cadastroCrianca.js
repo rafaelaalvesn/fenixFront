@@ -108,9 +108,15 @@ btnSalvar = function () {
     }
 }
 
-//$(document).ready(function () {
-//    var $CEP = $('#CEP');
-//    var $CPF = $('#CPF');
-//    $CEP.mask('00000-000', { reverse: true });
-//    $CPF.mask('000.000.000-00', { reverse: true });
-//});
+$(document).ready(function () {
+
+    $("input[id*='CPF']").inputmask({
+        mask: ['999.999.999-99', '99.999.999/9999-99'],
+        keepStatic: true
+    });
+    $("input[id*='CEP']").inputmask({
+        mask: ['99999-999'],
+        keepStatic: true
+    });
+
+});

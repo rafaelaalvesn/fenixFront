@@ -52,13 +52,13 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-5">
                         <label class="obrigatorio">Nome</label>
                         <input type="text" class="form-control formulario" id="nomeVisitante">
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-4">
                         <label>CPF</label>
-                        <input data-mask="000.000.000-00" data-mask-selectonfocus="true"  type="text" class="form-control formulario" id="cpfVisitante">
+                        <input data-mask="000.000.000-00" data-mask-selectonfocus="true"  type="text" class="form-control formulario" id="visitanteCPF">
                     </div>
                     <div class="form-group col-md-3">
                         <label>Telefone</label>

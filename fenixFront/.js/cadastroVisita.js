@@ -74,3 +74,15 @@ btnSalvar = function () {
         });
     }
 }
+
+$(document).ready(function () {
+
+    $("input[id*='visitanteCPF']").inputmask({
+        mask: ['999.999.999-99', '99.999.999/9999-99'],
+        keepStatic: true
+    });
+    $("input[id*='TELVisitante']").inputmask({
+        mask: ['(99)99999-9999'],
+        keepStatic: true
+    });
+});

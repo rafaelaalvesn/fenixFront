@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label>Data Validade</label>
-                            <input type="text" class="form-control formulario" id="dataValidade">
+                            <input type="date" class="form-control formulario" id="dataValidade">
                         </div>
                          <div class="form-group col-md-1">
                             <label>Quantidade</label>
