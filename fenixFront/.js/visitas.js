@@ -39,10 +39,10 @@ window.onload = function () {
     //a();
 }
 
-
 listarHTML = function () {
  
     for (var i = 0; i < visitas.length; i++) {   
+        if (visitas[i].Visivel == 1) {
         var htmlString = '<tr>' +    
             '<td>' + (visitas[i].Jovem && visitas[i].Jovem.nome? visitas[i].Jovem.nome : "Sem nome")+ '</td>' +
             //'<td>' + criancas[0].nome + '</td>' +
@@ -58,9 +58,13 @@ listarHTML = function () {
         htmlString += '<button type="button" class="btn btn-default bg-transparent formulario" id="btnVisualizar" onclick="btnVisualizarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Visualizar Visita" style="float: right">' +
                 '<span class="fa fa-eye"></span>' +
             '</button>' +
+            '<button type="button" class="btn btn-default bg-transparent formulario" id="btnRemover" onclick="btnRemoverClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Remover Visita" style="float: right">' +
+                '<span class="fa fa-trash"></span>' +
+            '</button>' +
             '</td>' +
             '</tr>';
         document.getElementById('tabela-visitas').innerHTML += htmlString;
+        }
     }
 }
 
@@ -73,6 +77,8 @@ btnVisualizarClick = function (index) {
     }
     window.location.assign("/pages/cadastroVisita.aspx");
 };
+
+
 
 //btnNovoCadastro.onclick = function () {
 //    //localStorage.setItem('jovemSelecionado', null);
@@ -95,6 +101,51 @@ btnLapisEditarClick = function (index) {
 
     window.location.assign("/pages/cadastroVisita.aspx");
 };
+
+btnRemoverClick = function (index) {
+    localStorage.setItem('visitaSelecionada', JSON.stringify(visitas[index]));
+    decisao = confirm("Deseja realmente excluir?");
+  
+    if (decisao){      
+         
+            $.ajax({
+
+                url: "http://localhost:55571/api/visita/atualizar",
+                crossDomain: true,
+                data: {
+
+                    "idVisita": (visitas[index].idVisita),
+                    "nomeVisitante": visitas[index].nomeVisitante,
+                    "cpfVisitante": visitas[index].cpfVisitante,
+                    "TELVisitante": visitas[index].TELVisitante,
+                    "dataVisita": visitas[index].dataVisita,
+                    "horaVisita": visitas[index].horaVisita,
+                    "idJovemVisitado": visitas[index].idJovemVisitado,
+                    "numOrdemJudicial": visitas[index].numOrdemJudicial,
+                    "tipoVisita": visitas[index].tipoVisita,
+                    "Visivel": 0,
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data !== null) {
+                        alert("Visita Excluída!");                    
+                        window.location.reload();
+
+                    } else {
+                        alert("Erro ao excluir visita!") ;
+                    }
+                },
+                type: 'POST'
+            });
+        }
+     
+     else {        
+        alert ("Você clicou no botão CANCELAR,\n"+      
+        "porque foi retornado o valor: "+decisao);      
+ }
+    
+};
+
 
 
 formataData = function (dataFormatSQL) {
