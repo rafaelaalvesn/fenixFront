@@ -21,24 +21,24 @@ window.onload = function () {
         type: 'GET'
     });
 
-    $.ajax({
-        url: "http://localhost:55571/api/jovem/pesquisar",
-        crossDomain: true,
-        data: {
-            "dado": 46 /*ajeitar p/ pegar o id do jovem do grid*/
-        },
-        dataType: 'json',
-        success: function (data) {
-            if (data !== null) {
-                criancas = data;
+    //$.ajax({
+    //    url: "http://localhost:55571/api/jovem/pesquisar",
+    //    crossDomain: true,
+    //    data: {
+    //        "dado": 46 /*ajeitar p/ pegar o id do jovem do grid*/
+    //    },
+    //    dataType: 'json',
+    //    success: function (data) {
+    //        if (data !== null) {
+    //            criancas = data;
 
-            } else {
-                alert("Ocorreu um erro na pesquisa.");
-            }
-        },
-        type: 'POST'
-    });
-    a();
+    //        } else {
+    //            alert("Ocorreu um erro na pesquisa.");
+    //        }
+    //    },
+    //    type: 'POST'
+    //});
+    //a();
 }
 
 
@@ -46,8 +46,8 @@ listarHTML = function () {
     
     for (var i = 0; i < visitas.length; i++) {   
         var htmlString = '<tr>' +    
-            //'<td>' + visitas[i].idJovemVisitado + '</td>' +
-            '<td>' + criancas[0].nome + '</td>' +
+            '<td>' + visitas[i].idJovemVisitado + '</td>' +
+            //'<td>' + criancas[0].nome + '</td>' +
             '<td>' + visitas[i].nomeVisitante + '</td>' +
              '<td>' + formataData(visitas[i].dataVisita) + '</td>' +
             '<td>' + formataHora(visitas[i].horaVisita) + '</td>' +
@@ -122,4 +122,37 @@ a = function () {
         },
         type: 'GET'
     });
+}
+
+
+btnPesquisarVisita = function () {
+    debugger
+
+    if (txtPesquisaVisita.value == "")
+    {
+        window.location.assign("/pages/Visitas.aspx");
+    }
+    
+    else {
+
+    $.ajax({
+        url: "http://localhost:55571/api/visita/pesquisar",
+        crossDomain: true,
+        data: {
+            "dado": txtPesquisaVisita.value
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+                document.getElementById('tabela-visitas').innerHTML = '';
+                visitas = data;
+                listarHTML();
+            } else {
+                alert("Ocorreu um erro na pesquisa.");
+            }
+        },
+        type: 'POST'
+    });
+
+    }
 }
