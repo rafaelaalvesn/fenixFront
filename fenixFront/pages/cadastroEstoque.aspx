@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label>Descrição</label>
-                            <input type="text" class="form-control formulario" id="descriçãoEstoque">
+                            <input type="text" class="form-control formulario" id="descricao">
                         </div>
                         <div class="form-group col-md-3">
                             <label>Data Validade</label>
@@ -38,7 +38,7 @@
                         </div>
                          <div class="form-group col-md-1">
                             <label>Quantidade</label>
-                            <input type="text" class="form-control formulario" id="quantidadeEstoque">
+                            <input type="text" class="form-control formulario" id="unidade">
                         </div>
                     </div>
                 </div>

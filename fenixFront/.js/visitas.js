@@ -137,13 +137,7 @@ btnRemoverClick = function (index) {
                 },
                 type: 'POST'
             });
-        }
-     
-     else {        
-        alert ("Você clicou no botão CANCELAR,\n"+      
-        "porque foi retornado o valor: "+decisao);      
- }
-    
+        }       
 };
 
 
