@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>CPF</label>
-                        <input data-mask="000.000.000-00" data-mask-selectonfocus="true"  type="text" class="form-control formulario" id="visitanteCPF">
+                        <input data-mask="000.000.000-00" data-mask-selectonfocus="true"  type="text" class="form-control formulario" id="cpfVisitante">
                     </div>
                     <div class="form-group col-md-3">
                         <label>Telefone</label>

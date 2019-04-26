@@ -10,7 +10,7 @@
             <div class="container col-12">
                 <h5 class="card-header bg-transparent tituloPagina">Visitas Agendadas</h5>
             </div>
-           
+
             <div class="container col-12">
                 <div class="row">
                     <div class="col-md-3">
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-   <%-- <div align="center" id="grid">
+    <%-- <div align="center" id="grid">
         <div class="card bg-light">
 
             <table class="table table-hover table1" id="tabela-visitas">
@@ -48,24 +48,23 @@
         </div>
     </div> --%>
 
-     <div align="center" id="grid">
+    <div align="center" id="grid">
         <div class="card bg-light">
 
             <table class="table table-hover table1" id="tabela-visitas">
-                        <thead>
-            <tr>
-              <th scope="col">Jovem</th>
-              <th scope="col">Visitante</th>
-              <th scope="col">Data</th>
-              <th scope="col">Hora</th>
-            </tr>
-          </thead>
+                <thead>
+                    <tr>
+                        <th scope="col">Jovem</th>
+                        <th scope="col">Visitante</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Hora</th>
+                    </tr>
+                </thead>
             </table>
         </div>
-    </div> 
+    </div>
 
 </asp:Content>
-  <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
+<asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
     <script src="../.js/visitas.js"></script>
-        </asp:Content>
-   
+</asp:Content>

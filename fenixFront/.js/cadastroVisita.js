@@ -5,6 +5,7 @@
 var visitaSelecionada;
 var nomeJovem = '';
 var formDesabilitado;
+var idVisita = 2;
 
 window.onload = function () {
     desabilitado = localStorage['desabilitaTextBox'];
@@ -32,6 +33,8 @@ window.onload = function () {
         nomeVisitante.value = visitaSelecionada.nomeVisitante;
         cpfVisitante.value = visitaSelecionada.cpfVisitante;
         TELVisitante.value = visitaSelecionada.TELVisitante;
+        idVisita.value = visitaSelecionada.idVisita;
+
     }
 }
 
@@ -59,7 +62,7 @@ btnSalvar = function () {
                 "nomeVisitante": nomeVisitante.value,
                 "cpfVisitante": cpfVisitante.value,
                 "TELVisitante": TELVisitante.value,
-                "idVisita": visitaSelecionada.idVisita,
+                "idVisita": idVisita.value,
                 "Jovem": nomeJovem.value
             },
             dataType: 'json',
