@@ -1,6 +1,9 @@
 ﻿var estoque;
 var tipoUsuario;
-var nomeCategoria;
+var estoqueSelecionado;
+var nomeCategoria = '';
+var idCatEstoqueCadastro;
+var desabilitado;
 
 window.onload = function () {
     tipoUsuario = localStorage['tipoUsuario'];
@@ -42,15 +45,42 @@ window.onload = function () {
 preencherDropdown = function () {
   
     for (var i = 0; i < estoqueCategorias.length; i++) {
-        nomeCategoria = estoqueCategorias[i];
-    var htmlDropdownString = 
-         '<a class="dropdown-item" id="' + i + '">' + nomeCategoria + '</a>';
-    document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
+        /*nomeCategoria = estoqueCategorias[i]*/;
+        var htmlDropdownString =
+            '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + estoqueCategorias[i].id + ')">' + estoqueCategorias[i].nomeCategoria + '</a>';
+        document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
     }
 
 }
 
+
+dropDownFunction = function (idCategoria) {
+    document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueCategorias[idCategoria - 1].nomeCategoria;
+    idCatEstoqueCadastro = idCategoria;
+
+    $.ajax({
+        url: "http://localhost:55571/api/estoque/pesquisarCategoria",
+        crossDomain: true,
+        data: {
+            "dado": idCatEstoqueCadastro
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+                document.getElementById('tabela-estoque').innerHTML = '';
+                estoque = data;
+                listarHTML();
+            } else {
+                alert("Ocorreu um erro na pesquisa.");
+            }
+        },
+        type: 'POST'
+    });
+}
+        
+
 listarHTML = function () {
+
 
     for (var i = 0; i < estoque.length; i++) {
         
@@ -114,10 +144,33 @@ formataData = function (dataFormatSQL) {
 }
 
 
-//btnNovoCadastro.onclick = function () {
-//    //localStorage.setItem('jovemSelecionado', null);
-//    window.location.assign("/pages/cadastroVisita.aspx");
-//};
+btnNovoCadastro.onclick = function () {
+    localStorage.setItem('desabilitaTextBox', 'false');
+    localStorage.setItem('estoqueSelecionado', null);
+    window.location.assign("/pages/cadastroEstoque.aspx");
+};
+
+//btnPesquisar = function () {
+//    debugger
+//    $.ajax({
+//        url: "http://localhost:55571/api/estoque/pesquisarCategoria",
+//        crossDomain: true,
+//        data: {
+//            "dado": idCatEstoqueCadastro
+//        },
+//        dataType: 'json',
+//        success: function (data) {
+//            if (data !== null) {
+//                document.getElementById('tabela-estoque').innerHTML = '';
+//                criancas = data;
+//                listarHTML();
+//            } else {
+//                alert("Ocorreu um erro na pesquisa.");
+//            }
+//        },
+//        type: 'POST'
+//    });
+//}
 
 
 //$('#nomeCat').click(function ()

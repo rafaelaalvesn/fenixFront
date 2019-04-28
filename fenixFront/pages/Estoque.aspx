@@ -17,7 +17,7 @@
                     <div class="col-md-6 col-sm-12">
                         <div class="dropdown">
 <%--                            <h6><span class="label label-default">Filtrar por Categoria</span></h6>--%>
-                            <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Filtrar por Categoria
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownCategorias">
@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="col-md-6 col-sm-12  btnAdicionar" align="right">
-                        <button type="button" class="btn btn-labeled btn-preto" id="btnAdicionar" onclick="window.location.href='cadastroEstoque.aspx'">
+                        <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
                             <span class="btn-label"><i class="fa fa-plus"></i>&nbspAdicionar</span>
                         </button>
                     </div>

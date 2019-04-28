@@ -1,9 +1,27 @@
 ﻿var estoqueSelecionado;
 var nomeCategoria = '';
+var idCatEstoqueCadastro;
+var desabilitado;
 
 window.onload = function () {
+    preencherDropdown();
     desabilitado = localStorage['desabilitaTextBox'];
     estoqueSelecionado = JSON.parse(localStorage['estoqueSelecionado']);
+  
+    //$.ajax({
+    //    url: "http://localhost:55571/api/estoque/listaCategorias",
+    //    crossDomain: true,
+    //    dataType: 'json',
+    //    success: function (data) {
+    //        if (data !== null) {
+    //            estoqueCategorias = data;
+    //            preencherDropdown();
+    //        } else {
+    //            alert("Erro ao listar categorias.");
+    //        }
+    //    },
+    //    type: 'GET'
+    //});
 
     if (localStorage['nomeCategoria'] != null) {
         nomeCategoria = JSON.parse(localStorage['nomeCategoria']);
@@ -31,10 +49,19 @@ window.onload = function () {
         else
         {
             dataValidade.value = new Date(estoqueSelecionado.dataValidade).yyyymmdd();
+
         }             
         descricao.value = estoqueSelecionado.descricao;
-        unidade.value = estoqueSelecionado.unidade; 
+        unidade.value = estoqueSelecionado.unidade;
+        //dataValidade.value = estoqueSelecionado.dataValidade; 
+        codigo.value = estoqueSelecionado.id;
     }
+
+  
+   
+}
+
+preencherDropdown = function () {
 
 
     $.ajax({
@@ -44,24 +71,37 @@ window.onload = function () {
         success: function (data) {
             if (data !== null) {
                 estoqueCategorias = data;
-                preencherDropdown();
+
+                for (var i = 0; i < estoqueCategorias.length; i++) {
+        /*nomeCategoria = estoqueCategorias[i]*/;
+                    var htmlDropdownString =
+                        '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + estoqueCategorias[i].id +')">' + estoqueCategorias[i].nomeCategoria + '</a>';
+                    document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
+                }
+
             } else {
                 alert("Erro ao listar categorias.");
             }
         },
         type: 'GET'
-    });
+    })
 }
 
-preencherDropdown = function () {
-    for (var i = 0; i < estoqueCategorias.length; i++) {
-        categoria = estoqueCategorias[i];
-        var htmlDropdownString =
-             '<a class="dropdown-item" onclick="teste()">' + estoqueCategorias[i] + '</a>';
-        document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
+dropDownFunction = function (idCategoria) {
+    document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueCategorias[idCategoria - 1].nomeCategoria;
+    idCatEstoqueCadastro = idCategoria;
 
+    var x = document.getElementById('dataValidade');   
+    if (estoqueCategorias[idCategoria - 1].possuiValidade == true) {
+
+        x.removeAttribute("disabled");
+    }
+    if (estoqueCategorias[idCategoria - 1].possuiValidade == false)
+    {
+        x.setAttribute("disabled", false);     
     }
 }
+
 
 Date.prototype.yyyymmdd = function () {
     var mm = this.getMonth() + 1; // getMonth() is zero-based
@@ -79,24 +119,16 @@ btnCloseForm.onclick = function () {
 };
 
 
-teste = function () 
-{
 
-    alert('Teste');
-}
-
-
-
-btnSalvar = function () {
+btnSalvarEstoque.onclick = function () {
     if (desabilitado === 'false') {
         var url = estoqueSelecionado ? "http://localhost:55571/api/estoque/atualizar" : "http://localhost:55571/api/estoque/inserir";
         $.ajax({
             url: url,
             crossDomain: true,
             data: {
-               
-                "id": null,
-                "idCategoria": null,
+                "id": codigo.value,    
+                "idCategoria": idCatEstoqueCadastro, 
                 "descricao": descricao.value,
                 "dataValidade": dataValidade.value,
                 "unidade": unidade.value
@@ -112,4 +144,4 @@ btnSalvar = function () {
             type: 'POST'
         });
     }
-}
+};

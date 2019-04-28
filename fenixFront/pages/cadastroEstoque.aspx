@@ -20,7 +20,7 @@
                             <label>Categoria</label>
 
                             <div class="dropdown">
-                                <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Categoria do Produto
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownCategorias">
@@ -28,10 +28,15 @@
                             </div>
                             <%--</div>--%>
                         </div>
-                        <div class="form-group col-md-5">
+                        <div class="form-group col-md-4">
                             <label>Descrição</label>
                             <input type="text" class="form-control formulario" id="descricao">
                         </div>
+                         <div class="form-group col-md-1">
+                            <label>Id</label>
+                            <input type="text" class="form-control" id="codigo" disabled>
+                        </div>
+
                         <div class="form-group col-md-3">
                             <label>Data Validade</label>
                             <input type="date" class="form-control formulario" id="dataValidade">
@@ -44,9 +49,9 @@
                 </div>
                  <div class="form-row">
                     <div class="form-group col-md-12" align="right">
-                        <button type="button" class="btn btn-labeled btn-preto formulario" onclick="btnSalvar()">
+                        <button id="btnSalvarEstoque" type="button" class="btn btn-labeled btn-preto" onclick="btnSalvarEstoque()"> 
                             <span class="btn-label"><i class="fa fa-check"></i></span>&nbspSalvar
-                        </button>
+                        </button>          
                     </div>
                 </div>
             </form>
