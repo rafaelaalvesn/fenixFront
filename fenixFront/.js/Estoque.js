@@ -150,6 +150,14 @@ btnNovoCadastro.onclick = function () {
     window.location.assign("/pages/cadastroEstoque.aspx");
 };
 
+
+
+reloadPage = function () {
+    window.location.reload();
+};
+
+
+
 //btnPesquisar = function () {
 //    debugger
 //    $.ajax({

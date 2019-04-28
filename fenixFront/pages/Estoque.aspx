@@ -21,9 +21,8 @@
                                 Filtrar por Categoria
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownCategorias">
-                              <%--  <a class="dropdown-item" href="#">Alimentos</a>
-                                <a class="dropdown-item" href="#">Móveis</a>
-                                <a class="dropdown-item" href="#">Material Higiênico</a>--%>
+                       
+                                     <a class="dropdown-item" id="estoqueAll" onclick="reloadPage()">Todos os Itens</a>
                             </div>
                         </div>
                     </div>

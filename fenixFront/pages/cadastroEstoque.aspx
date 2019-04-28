@@ -15,6 +15,10 @@
             <form>
                 <div class="container col-12">
                     <div class="form-row">
+                        <div class="form-group col-md-1">
+                            <label>Id</label>
+                            <input type="text" class="form-control" id="codigo" disabled>
+                        </div>
                         <div class="form-group col-md-3">
                             <%--                        <div class="col-md-6 col-sm-12">--%>
                             <label>Categoria</label>
@@ -31,11 +35,7 @@
                         <div class="form-group col-md-4">
                             <label>Descrição</label>
                             <input type="text" class="form-control formulario" id="descricao">
-                        </div>
-                         <div class="form-group col-md-1">
-                            <label>Id</label>
-                            <input type="text" class="form-control" id="codigo" disabled>
-                        </div>
+                        </div>                         
 
                         <div class="form-group col-md-3">
                             <label>Data Validade</label>
