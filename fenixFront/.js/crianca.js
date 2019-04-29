@@ -21,6 +21,8 @@ window.onload = function () {
 
 listarHTML = function () {
     for (var i = 0; i < criancas.length; i++) {
+
+        if (criancas[i].nome != null) {
         var htmlString = '<tr>' +
             '<td>' + criancas[i].nome + '</td>' +
             '<td>' + (criancas[i].ligadoDesligado ? "LIGADO" : "DESLIGADO") + '</td>' +
@@ -35,7 +37,8 @@ listarHTML = function () {
             '</button>' +
             '</td>' +
             '</tr>';
-        document.getElementById('tabela-jovem').innerHTML += htmlString;
+            document.getElementById('tabela-jovem').innerHTML += htmlString;
+        }
     }
 }
 

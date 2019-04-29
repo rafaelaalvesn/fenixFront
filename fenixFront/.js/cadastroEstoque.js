@@ -50,7 +50,8 @@ window.onload = function () {
         {
             dataValidade.value = new Date(estoqueSelecionado.dataValidade).yyyymmdd();
 
-        }             
+        }
+        document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueSelecionado.EstoqueCat.nomeCategoria;
         descricao.value = estoqueSelecionado.descricao;
         unidade.value = estoqueSelecionado.unidade;
         //dataValidade.value = estoqueSelecionado.dataValidade; 
@@ -75,7 +76,7 @@ preencherDropdown = function () {
                 for (var i = 0; i < estoqueCategorias.length; i++) {
         /*nomeCategoria = estoqueCategorias[i]*/;
                     var htmlDropdownString =
-                        '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + estoqueCategorias[i].id +')">' + estoqueCategorias[i].nomeCategoria + '</a>';
+                        '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + i +')">' + estoqueCategorias[i].nomeCategoria + '</a>';
                     document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
                 }
 
@@ -87,9 +88,9 @@ preencherDropdown = function () {
     })
 }
 
-dropDownFunction = function (idCategoria) {
-    document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueCategorias[idCategoria - 1].nomeCategoria;
-    idCatEstoqueCadastro = idCategoria;
+dropDownFunction = function (pos) {
+    document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueCategorias[pos].nomeCategoria;
+    idCatEstoqueCadastro = estoqueCategorias[pos].id;
 
     var x = document.getElementById('dataValidade');   
     if (estoqueCategorias[idCategoria - 1].possuiValidade == true) {

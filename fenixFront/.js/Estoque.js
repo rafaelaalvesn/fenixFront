@@ -47,15 +47,15 @@ preencherDropdown = function () {
     for (var i = 0; i < estoqueCategorias.length; i++) {
         /*nomeCategoria = estoqueCategorias[i]*/;
         var htmlDropdownString =
-            '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + estoqueCategorias[i].id + ')">' + estoqueCategorias[i].nomeCategoria + '</a>';
+            '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + i + ')">' + estoqueCategorias[i].nomeCategoria + '</a>';
         document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
     }
 
 }
 
 
-dropDownFunction = function (idCategoria) {
-    document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueCategorias[idCategoria - 1].nomeCategoria;
+dropDownFunction = function (pos) {
+    document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueCategorias[pos].nomeCategoria;
     idCatEstoqueCadastro = idCategoria;
 
     $.ajax({

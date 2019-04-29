@@ -15,11 +15,21 @@
             <form>
 
                 <div class="form-row">
-                    <div class="form-group col-md-7">
-                        <label>Nome do Jovem</label>
-                        <input type="text" class="form-control formulario" id="nomeJovem">
+                     <div class="form-group col-md-1">
+                        <label>Id</label>
+                        <input type="text" class="form-control" id="codigo" disabled>
                     </div>
-
+                        <div class="form-group col-md-6">
+                            <%--                        <div class="col-md-6 col-sm-12">--%>
+                            <label>Nome doJovem</label>
+                            <div class="dropdown">
+                                <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonJovens" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   Nome do Jovem
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownJovens">
+                                </div>
+                            </div>
+                        </div>                 
                     <div class="form-group col-md-5">
                         <label>Nº ordem judicial</label>
                         <input type="number" class="form-control formulario" id="numOrdemJudicial">

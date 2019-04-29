@@ -1,13 +1,46 @@
-﻿btnCloseForm.onclick = function () {
+﻿var visitaSelecionada;
+var nomeJovem = '';
+var formDesabilitado;
+//var idVisita = 2;
+var idJovemSelecionado;
+
+btnCloseForm.onclick = function () {
     window.location.assign("/pages/Visitas.aspx");
 };
 
-var visitaSelecionada;
-var nomeJovem = '';
-var formDesabilitado;
-var idVisita = 2;
+
+preencherDropdown = function () {
+    $.ajax({
+        url: "http://localhost:55571/api/jovem/lista",
+        crossDomain: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+                jovem = data;
+
+                for (var i = 0; i < jovem.length; i++) {
+                    if (jovem[i].ligadoDesligado == true && jovem[i].nome != null) {
+                    var htmlDropdownString =
+                        '<a class="dropdown-item" id="' + jovem[i].id + ' "onclick="dropDownFunction(' + i + ')">' + jovem[i].nome + '</a>';
+                    document.getElementById('dropdownJovens').innerHTML += htmlDropdownString;
+                }
+
+                }
+            } else {
+                alert("Erro ao listar categorias.");
+            }
+        },
+        type: 'GET'
+    })
+}
+
+dropDownFunction = function (pos) {
+    document.getElementById('dropdownMenuButtonJovens').innerHTML = jovem[pos].nome;
+    idJovemSelecionado = jovem[pos].id;   
+}
 
 window.onload = function () {
+    preencherDropdown();
     desabilitado = localStorage['desabilitaTextBox'];
     visitaSelecionada = JSON.parse(localStorage['visitaSelecionada']);
     if (localStorage['nomeJovem'] != null) {
@@ -25,7 +58,8 @@ window.onload = function () {
             x[i].removeAttribute("disabled");
     }
     if (visitaSelecionada != null) {
-        nomeJovem.value = nomeJovem;
+        codigo.value = visitaSelecionada.idVisita;
+        document.getElementById('dropdownMenuButtonJovens').innerHTML = nomeJovem;
         numOrdemJudicial.value = visitaSelecionada.numOrdemJudicial;
         dataVisita.value = new Date(visitaSelecionada.dataVisita).yyyymmdd();
         horaVisita.value = visitaSelecionada.horaVisita;
@@ -33,7 +67,7 @@ window.onload = function () {
         nomeVisitante.value = visitaSelecionada.nomeVisitante;
         cpfVisitante.value = visitaSelecionada.cpfVisitante;
         TELVisitante.value = visitaSelecionada.TELVisitante;
-        idVisita.value = visitaSelecionada.idVisita;
+      
 
     }
 }
@@ -55,15 +89,16 @@ btnSalvar = function () {
             url: url,
             crossDomain: true,
             data: {
-                "numOrdemJudicial": numOrdemJudicial.value,
-                "dataVisita": dataVisita.value,
-                "horaVisita": horaVisita.value,
-                "tipoVisita": tipoVisita.value,
+                "idVisita": codigo.value,
                 "nomeVisitante": nomeVisitante.value,
                 "cpfVisitante": cpfVisitante.value,
-                "TELVisitante": TELVisitante.value,
-                "idVisita": idVisita.value,
-                "Jovem": nomeJovem.value
+                "TELVisitante": TELVisitante.value,              
+                "dataVisita": dataVisita.value,
+                "horaVisita": horaVisita.value,              
+                "idJovemVisitado": idJovemSelecionado,
+                "tipoVisita": tipoVisita.value,
+                "numOrdemJudicial": numOrdemJudicial.value,
+                "Visivel": 1,
             },
             dataType: 'json',
             success: function (data) {
