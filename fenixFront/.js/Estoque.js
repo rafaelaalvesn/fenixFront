@@ -56,7 +56,7 @@ preencherDropdown = function () {
 
 dropDownFunction = function (pos) {
     document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueCategorias[pos].nomeCategoria;
-    idCatEstoqueCadastro = idCategoria;
+    idCatEstoqueCadastro = estoqueCategorias[pos].id;
 
     $.ajax({
         url: "http://localhost:55571/api/estoque/pesquisarCategoria",

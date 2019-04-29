@@ -1,6 +1,6 @@
 ﻿var estoqueSelecionado;
 var nomeCategoria = '';
-var idCatEstoqueCadastro;
+var idCatEstoqueCadastro = 0;
 var desabilitado;
 
 window.onload = function () {
@@ -122,6 +122,9 @@ btnCloseForm.onclick = function () {
 
 
 btnSalvarEstoque.onclick = function () {
+    if (idCatEstoqueCadastro === 0) {
+        idCatEstoqueCadastro = estoqueSelecionado.EstoqueCat.id;
+    }
     if (desabilitado === 'false') {
         var url = estoqueSelecionado ? "http://localhost:55571/api/estoque/atualizar" : "http://localhost:55571/api/estoque/inserir";
         $.ajax({
