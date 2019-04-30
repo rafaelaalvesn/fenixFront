@@ -1,0 +1,32 @@
+﻿#topo{
+    padding-bottom: 30px;
+    margin-left: -15px;
+}
+
+.container {
+    padding-right: 0px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.tituloPagina{
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 50px;
+}
+
+.btnSelectCategory{
+    background: black;
+}
+
+#dropdownMenuButtonTipoUsuario {
+    width: 250px;
+}
+

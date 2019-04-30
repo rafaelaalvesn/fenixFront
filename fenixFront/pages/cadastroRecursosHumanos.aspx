@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cadastroCrianca.aspx.cs" Inherits="pages_cadastroCrianca" MasterPageFile="~/master/MasterPage.master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cadastroRecursosHumanos.aspx.cs" Inherits="pages_cadastroRecursosHumanos" MasterPageFile="~/master/MasterPage.master" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
     <link href="../css/formulariosCadastro.css" rel="stylesheet" />
@@ -7,7 +7,7 @@
 <asp:Content ContentPlaceHolderID="content" runat="server">
      <div class="card bg-light col-12">
         <div id="titulo" class="card-header tituloFormularios">
-            <label>Crianças</label>
+            <label>Recursos Humanos</label>
             <button id="btnCloseForm" type="button" class="btn btn-labeled btn-transparent" onclick="btnCloseForm()">
                             <span class="btn-label"><i class="fa fa-window-close"></i></span>
                         </button>   
@@ -70,36 +70,22 @@
                 </div>
                 <hr />
                 <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label>Responsável</label>
-                        <select class="form-control formulario" id="responsavel">
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputCity">Outro Responsável</label>
-                        <input type="text" class="form-control formulario" id="outroResponsavel">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>Nome do Responsável</label>
-                        <input type="text" class="form-control formulario" id="nomeResponsavel">
-                    </div>
-                </div>
-
-                <hr />
-
-                <div class="form-row">
-                    <div class="form-group  col-md-4">
+                    <div class="form-group  col-md-3">
                         <label class="obrigatorio">Data da Entrada.</label>
                         <input type="date" class="form-control formulario" id="dataEntrada">
                     </div>
                     <div class="form-group  col-md-4">
                         <label>Data de Saída</label>
                         <input type="date" class="form-control formulario" id="dataSaida">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputCity">Motivo da Saída</label>
-                        <input type="text" class="form-control formulario" id="motivoSaida">
-                    </div>
+                    </div>  
+                     <div class="form-group col-md-3">
+                        <label class="obrigatorio">Cidade</label>
+                        <input type="text" class="form-control formulario" id="cidade">
+                    </div>    
+                     <div class="form-group col-md-2">
+                        <label class="obrigatorio">UF</label>
+                        <input type="text" class="form-control formulario" id="uf">
+                    </div>                
                 </div>
                 <hr />
                 <div class="form-row">               
