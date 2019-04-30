@@ -56,6 +56,7 @@ window.onload = function () {
         unidade.value = estoqueSelecionado.unidade;
         //dataValidade.value = estoqueSelecionado.dataValidade; 
         codigo.value = estoqueSelecionado.id;
+        idCatEstoqueCadastro = estoqueSelecionado.EstoqueCat.id;
     }
 
   
@@ -122,9 +123,6 @@ btnCloseForm.onclick = function () {
 
 
 btnSalvarEstoque.onclick = function () {
-    if (idCatEstoqueCadastro === 0) {
-        idCatEstoqueCadastro = estoqueSelecionado.EstoqueCat.id;
-    }
     if (desabilitado === 'false') {
         var url = estoqueSelecionado ? "http://localhost:55571/api/estoque/atualizar" : "http://localhost:55571/api/estoque/inserir";
         $.ajax({

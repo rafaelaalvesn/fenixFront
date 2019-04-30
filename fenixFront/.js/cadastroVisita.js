@@ -67,7 +67,7 @@ window.onload = function () {
         nomeVisitante.value = visitaSelecionada.nomeVisitante;
         cpfVisitante.value = visitaSelecionada.cpfVisitante;
         TELVisitante.value = visitaSelecionada.TELVisitante;
-      
+        idJovemSelecionado = visitaSelecionada.idJovemVisitado;
 
     }
 }
@@ -108,7 +108,8 @@ btnSalvar = function () {
                     visitaSelecionada ? alert("Erro ao atualizar") : alert("Erro ao inserir");
                 }
             },
-            type: visitaSelecionada? 'PUT' : 'POST'
+            //type: visitaSelecionada? 'PUT' : 'POST'
+            type: 'POST'
         });
     }
 }
