@@ -2,7 +2,7 @@
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
-    <link href="../css/crianca.css" rel="stylesheet" />
+    <link href="../css/estoque.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="content" runat="server">

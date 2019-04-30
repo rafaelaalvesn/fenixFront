@@ -93,11 +93,11 @@ dropDownFunction = function (pos) {
     idCatEstoqueCadastro = estoqueCategorias[pos].id;
 
     var x = document.getElementById('dataValidade');   
-    if (estoqueCategorias[idCategoria - 1].possuiValidade == true) {
+    if (estoqueCategorias[pos].possuiValidade == true) {
 
         x.removeAttribute("disabled");
     }
-    if (estoqueCategorias[idCategoria - 1].possuiValidade == false)
+    if (estoqueCategorias[pos].possuiValidade == false)
     {
         x.setAttribute("disabled", false);     
     }

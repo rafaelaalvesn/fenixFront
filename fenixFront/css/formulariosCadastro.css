@@ -21,3 +21,8 @@ float:right;
 .cardForm {
    margin: auto;
 }
+
+#dropdownMenuButtonCategorias {
+    width: 200px;
+}
+
