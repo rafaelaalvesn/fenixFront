@@ -45,7 +45,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-cog" style="color: white"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="https://www.google.com.br" id="dropDownControleDeUsuario">Controle de Usuários</a>
+                                <a class="dropdown-item" href="/pages/ControleUsuarios.aspx" id="dropDownControleDeUsuario">Controle de Usuários</a>
                                 <a class="dropdown-item" href="/pages/login.aspx" id="dropDownSair">Sair</a>
 
                             </div>

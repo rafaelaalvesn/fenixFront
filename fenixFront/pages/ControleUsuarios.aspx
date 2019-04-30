@@ -1,16 +1,57 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ControleUsuarios.aspx.cs" Inherits="pages_ControleUsuarios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ControleUsuarios.aspx.cs" Inherits="pages_ControleUsuarios"  MasterPageFile="~/master/MasterPage.master"  %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    <link href="../css/usuario.css" rel="stylesheet" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+<asp:Content ContentPlaceHolderID="content" runat="server">
+    <div id="topo">
+        <div>
+            <div class="container col-12">
+                <h5 class="card-header bg-transparent tituloPagina">Estoque</h5>
+            </div>
+
+            <div class="container col-12">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="dropdown">
+                            <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonUsuarios" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filtrar por tipo Usuário
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownUsuarios">
+                       
+                                     <a class="dropdown-item" id="UsuariosAll" onclick="reloadPage()">Todos os Usuários</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12  btnAdicionar" align="right">
+                        <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
+                            <span class="btn-label"><i class="fa fa-plus"></i>&nbspAdicionar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </form>
-</body>
-</html>
+
+    <div align="center" id="grid">
+        <div class="card bg-light">
+
+            <table class="table table-hover table1" id="tabela-usuario">
+
+                <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Tipo de Usuário</th>
+            </tr>
+          </thead>
+
+            </table>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
+    <script src="../.js/Usuario.js"></script>
+</asp:Content>
