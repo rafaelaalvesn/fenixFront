@@ -35,6 +35,8 @@
 //    $('#Telefone').mask('(00) 00000-0000');
 //});
 
+
+
 $(document).ready(function () {
     tipoUsuario = localStorage['tipoUsuario'];
     if (tipoUsuario != "admin") {

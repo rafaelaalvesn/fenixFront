@@ -118,5 +118,5 @@ $(document).ready(function () {
         mask: ['99999-999'],
         keepStatic: true
     });
-
+   
 });
