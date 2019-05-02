@@ -15,38 +15,32 @@
         <div class="card-body" id="form">
             <form>
 
-                <%-- botão rádio de esoclhe entre entrada e saída --%>
+                <%-- botão rádio de escolha entre entrada e saída --%>
                 <div class="form-row">
                     <div class="col-md-3">
-                        <input type="radio" name="radio" value="1" checked>Nova Entrada
+                        <input type="radio" name="radio" value="entrada" id="entrada" onclick:btnTipoTransacao()>Nova Entrada
                     </div>
                     <div class="col-md-3">
-                        <input type="radio" name="radio" value="2">Nova Saída
+                        <input type="radio" name="radio" value="saida" id="saida" onclick:"btnTipoTransacao()">Nova Saída
+                    </div>
+                    <div class="col-md-3 lblNumTransacao">
+                        Nº Transação:
+                    </div>
+                    <div class="form-group col-md-3" id="codigoTransacao">
+                        <input type="text" class="form-control" disabled>
                     </div>
                 </div>
 
                 <hr />
 
-
                 <%-- ENTRADA --%>
 
                 <div class="form-row">
-                    <div class="form-group col-md-2" id="codigoEntrada">
-                        <label>Nº Transação</label>
-                        <input type="text" class="form-control" disabled>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>Data do Recebimento</label>
-                        <input type="date" class="form-control formulario" id="dataTransacaoEntrada">
-                    </div>
-                </div>
 
-
-                <div class="form-row">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="dropdown">
+                    <div class="col-md-3">
+                        <div class="dropdown" >
                             <h6><span class="label label-default">Filtrar por Tipo</span></h6>
-                            <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonEntradas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonEntradas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
                                 Tipo de Entrada
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownEntradas">
@@ -54,9 +48,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="col-md-3">
+                        <label >Data do Recebimento</label>
+                        <input type="date" class="form-control formulario" id="dataTransacaoEntrada" disabled>
+                    </div>
+                    <div class="col-md-6">
                         <label>Descrição</label>
-                        <input type="text" class="form-control formulario" id="descricaoEntrada">
+                        <input type="text" class="form-control formulario" id="descricaoEntrada" disabled>
                     </div>
                 </div>
 
@@ -66,37 +64,29 @@
                 <%-- SAÍDA --%>
 
                 <div class="form-row">
-                    <div class="form-group col-md-2" id="codigoSaida">
-                        <label>Nº Transação</label>
-                        <input type="text" class="form-control" disabled>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>Data da Saída</label>
-                        <input type="date" class="form-control formulario" id="dataTransacaoSaida" disabled>
-                    </div>
-                </div>
-
-
-                <div class="form-row">
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-3">
                         <div class="dropdown">
-                            <h6><span class="label label-default">Filtrar por Tipo</span></h6>
+                            <h6><span class="label label-default">Tipo de entrada</span></h6>
                             <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonSaida" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
-                                Destino
+                                Filtro Destino
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownSaida">
                                 <a class="dropdown-item" id="estoqueAll" onclick="reloadPage()">Destino</a>
                             </div>
                         </div>
                     </div>
+                    <div class="form-group col-md-3">
+                        <label>Data da Saída</label>
+                        <input type="date" class="form-control formulario" id="dataTransacaoSaida" disabled>
+                    </div>
+
                     <div class="form-group col-md-6">
                         <label>Descrição</label>
                         <input type="text" class="form-control formulario" id="descricaoSaida" disabled>
                     </div>
                 </div>
-
-            </form>
-        </div>
+        </form>
+            </div>
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">

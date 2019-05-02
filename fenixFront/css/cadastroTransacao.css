@@ -5,3 +5,7 @@
 #codigoSaida {
     margin-right: 50px;
 }
+
+.lblNumTransacao{
+   text-align: right;
+}
