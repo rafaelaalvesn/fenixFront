@@ -6,9 +6,10 @@ var idCatEstoqueCadastro;
 var desabilitado;
 
 window.onload = function () {
+
     tipoUsuario = localStorage['tipoUsuario'];
     $.ajax({
-        url: "http://localhost:55571/api/estoque/lista",
+        url: "http://localhost:55571/api/estoque/",
         crossDomain: true,
         dataType: 'json',
         success: function (data) {
@@ -24,7 +25,7 @@ window.onload = function () {
 
 
     $.ajax({
-        url: "http://localhost:55571/api/estoque/listaCategorias",
+        url: "http://localhost:55571/api/estoque/Categorias",
         crossDomain: true,
         dataType: 'json',
         success: function (data) {
@@ -45,7 +46,6 @@ window.onload = function () {
 preencherDropdown = function () {
   
     for (var i = 0; i < estoqueCategorias.length; i++) {
-        /*nomeCategoria = estoqueCategorias[i]*/;
         var htmlDropdownString =
             '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + i + ')">' + estoqueCategorias[i].nomeCategoria + '</a>';
         document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
@@ -80,7 +80,6 @@ dropDownFunction = function (pos) {
         
 
 listarHTML = function () {
-
 
     for (var i = 0; i < estoque.length; i++) {
         
@@ -137,12 +136,6 @@ btnEditarClick = function (index) {
     window.location.assign("/pages/cadastroEstoque.aspx");
 };
 
-formataData = function (dataFormatSQL) {
-    moment.locale('pt-br');
-    var dataPadraoBR = (moment(dataFormatSQL).format('DD/MM/YYYY'));
-    return dataPadraoBR
-}
-
 
 btnNovoCadastro.onclick = function () {
     localStorage.setItem('desabilitaTextBox', 'false');
@@ -151,38 +144,13 @@ btnNovoCadastro.onclick = function () {
 };
 
 
-
 reloadPage = function () {
     window.location.reload();
 };
 
 
-
-//btnPesquisar = function () {
-//    debugger
-//    $.ajax({
-//        url: "http://localhost:55571/api/estoque/pesquisarCategoria",
-//        crossDomain: true,
-//        data: {
-//            "dado": idCatEstoqueCadastro
-//        },
-//        dataType: 'json',
-//        success: function (data) {
-//            if (data !== null) {
-//                document.getElementById('tabela-estoque').innerHTML = '';
-//                criancas = data;
-//                listarHTML();
-//            } else {
-//                alert("Ocorreu um erro na pesquisa.");
-//            }
-//        },
-//        type: 'POST'
-//    });
-//}
-
-
-//$('#nomeCat').click(function ()
-//{
-//    a = document.getElementById('nomeCat').value;
-
-//});
+formataData = function (dataFormatSQL) {
+    moment.locale('pt-br');
+    var dataPadraoBR = (moment(dataFormatSQL).format('DD/MM/YYYY'));
+    return dataPadraoBR
+}

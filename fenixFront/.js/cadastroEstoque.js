@@ -122,15 +122,43 @@ btnCloseForm.onclick = function () {
 
 
 
+//btnSalvarEstoque.onclick = function () {
+//    if (desabilitado === 'false') {
+//        var url = estoqueSelecionado ? "http://localhost:55571/api/estoque/atualizar" : "http://localhost:55571/api/estoque/inserir";
+//        $.ajax({
+//            url: url,
+//            crossDomain: true,
+//            data: {
+//                "id": codigo.value,    
+//                "idCategoria": idCatEstoqueCadastro, 
+//                "descricao": descricao.value,
+//                "dataValidade": dataValidade.value,
+//                "unidade": unidade.value
+//            },
+//            dataType: 'json',
+//            success: function (data) {
+//                if (data !== null) {
+//                    estoqueSelecionado ? alert("Estoque atualizado!") : alert("Estoque inserido!");
+//                } else {
+//                    estoqueSelecionado ? alert("Erro ao atualizar") : alert("Erro ao inserir");
+//                }
+//            },
+//            type: estoqueSelecionado? 'PUT' : 'POST'
+//            //type: 'POST'
+//        });
+//    }
+//};
+
+
 btnSalvarEstoque.onclick = function () {
     if (desabilitado === 'false') {
-        var url = estoqueSelecionado ? "http://localhost:55571/api/estoque/atualizar" : "http://localhost:55571/api/estoque/inserir";
+        /*var url = estoqueSelecionado ?/ "http://localhost:55571/api/estoque/atualizar" : "http://localhost:55571/api/estoque/inserir"; */
         $.ajax({
-            url: url,
+            url: "http://localhost:55571/api/estoque/",
             crossDomain: true,
             data: {
-                "id": codigo.value,    
-                "idCategoria": idCatEstoqueCadastro, 
+                "id": codigo.value,
+                "idCategoria": idCatEstoqueCadastro,
                 "descricao": descricao.value,
                 "dataValidade": dataValidade.value,
                 "unidade": unidade.value
@@ -143,7 +171,8 @@ btnSalvarEstoque.onclick = function () {
                     estoqueSelecionado ? alert("Erro ao atualizar") : alert("Erro ao inserir");
                 }
             },
-            type: 'POST'
+            type: estoqueSelecionado ? 'PUT' : 'POST'
+            //type: 'POST'
         });
     }
 };
