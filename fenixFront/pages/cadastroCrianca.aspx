@@ -5,15 +5,15 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="content" runat="server">
-     <div class="card bg-light col-12">
+    <div class="card bg-light col-12">
         <div id="titulo" class="card-header tituloFormularios">
             <label>Crianças</label>
             <button id="btnCloseForm" type="button" class="btn btn-labeled btn-transparent" onclick="btnCloseForm()">
-                            <span class="btn-label"><i class="fa fa-window-close"></i></span>
-                        </button>   
+                <span class="btn-label"><i class="fa fa-window-close"></i></span>
+            </button>
         </div>
         <div class="card-body" id="form">
-            <form>      
+            <form>
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>Código</label>
@@ -26,7 +26,6 @@
                     <div class="form-group  col-md-2">
                         <label>Status</label>
                         <select class="form-control formulario" id="ligadoDesligado">
-                            
                         </select>
                     </div>
                     <div class="form-group col-md-3">
@@ -102,7 +101,7 @@
                     </div>
                 </div>
                 <hr />
-                <div class="form-row">               
+                <div class="form-row">
                     <div class="form-group col-md-12" align="right">
                         <button type="button" class="btn btn-labeled btn-preto formulario" onclick="btnSalvar()">
                             <span class="btn-label"><i class="fa fa-check"></i></span>&nbspSalvar
@@ -117,5 +116,5 @@
     <script src="../.js/cadastroCrianca.js"></script>
 </asp:Content>
 
-    
+
 

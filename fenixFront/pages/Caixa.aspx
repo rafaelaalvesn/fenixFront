@@ -9,8 +9,8 @@
 
         <div class="container col-12">
             <h5 class="row card-header bg-transparent tituloPagina">Caixa</h5>
-                                   <div class="row">
-                <div class="divTitulo col-10" style="text-align:left">
+            <div class="row">
+                <div class="divTitulo col-10" style="text-align: left">
                     <h6 class="card-header bg-transparent tituloPagina">Últimas Transações</h6>
                 </div>
 
@@ -23,8 +23,20 @@
                 <%-- fim do botão para nova transação --%>
             </div>
 
-            <div class="row">
-                <div class="col-12 teste">
+            <div align="center" id="grid">
+                <div class="card bg-light">
+
+                    <table class="table table-hover table1" id="tabela-caixa">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Nº Transação</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Valor</th>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>
