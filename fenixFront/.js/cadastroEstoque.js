@@ -8,21 +8,6 @@ window.onload = function () {
     desabilitado = localStorage['desabilitaTextBox'];
     estoqueSelecionado = JSON.parse(localStorage['estoqueSelecionado']);
   
-    //$.ajax({
-    //    url: "http://localhost:55571/api/estoque/listaCategorias",
-    //    crossDomain: true,
-    //    dataType: 'json',
-    //    success: function (data) {
-    //        if (data !== null) {
-    //            estoqueCategorias = data;
-    //            preencherDropdown();
-    //        } else {
-    //            alert("Erro ao listar categorias.");
-    //        }
-    //    },
-    //    type: 'GET'
-    //});
-
     if (localStorage['nomeCategoria'] != null) {
         nomeCategoria = JSON.parse(localStorage['nomeCategoria']);
     }
@@ -38,8 +23,6 @@ window.onload = function () {
     }
 
     if (estoqueSelecionado != null) {
-        //nomeJovem.value = nomeJovem;
-        // idCategoria.value = estoqueSelecionado.idCategoria;
 
         if (estoqueSelecionado.dataValidade == null)
         {
@@ -54,20 +37,15 @@ window.onload = function () {
         document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueSelecionado.EstoqueCat.nomeCategoria;
         descricao.value = estoqueSelecionado.descricao;
         unidade.value = estoqueSelecionado.unidade;
-        //dataValidade.value = estoqueSelecionado.dataValidade; 
         codigo.value = estoqueSelecionado.id;
         idCatEstoqueCadastro = estoqueSelecionado.EstoqueCat.id;
-    }
-
-  
-   
+    } 
 }
 
 preencherDropdown = function () {
 
-
     $.ajax({
-        url: "http://localhost:55571/api/estoque/listaCategorias",
+        url: "http://localhost:55571/api/estoque/categoria",
         crossDomain: true,
         dataType: 'json',
         success: function (data) {
@@ -75,7 +53,6 @@ preencherDropdown = function () {
                 estoqueCategorias = data;
 
                 for (var i = 0; i < estoqueCategorias.length; i++) {
-        /*nomeCategoria = estoqueCategorias[i]*/;
                     var htmlDropdownString =
                         '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + i +')">' + estoqueCategorias[i].nomeCategoria + '</a>';
                     document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
@@ -122,37 +99,8 @@ btnCloseForm.onclick = function () {
 
 
 
-//btnSalvarEstoque.onclick = function () {
-//    if (desabilitado === 'false') {
-//        var url = estoqueSelecionado ? "http://localhost:55571/api/estoque/atualizar" : "http://localhost:55571/api/estoque/inserir";
-//        $.ajax({
-//            url: url,
-//            crossDomain: true,
-//            data: {
-//                "id": codigo.value,    
-//                "idCategoria": idCatEstoqueCadastro, 
-//                "descricao": descricao.value,
-//                "dataValidade": dataValidade.value,
-//                "unidade": unidade.value
-//            },
-//            dataType: 'json',
-//            success: function (data) {
-//                if (data !== null) {
-//                    estoqueSelecionado ? alert("Estoque atualizado!") : alert("Estoque inserido!");
-//                } else {
-//                    estoqueSelecionado ? alert("Erro ao atualizar") : alert("Erro ao inserir");
-//                }
-//            },
-//            type: estoqueSelecionado? 'PUT' : 'POST'
-//            //type: 'POST'
-//        });
-//    }
-//};
-
-
 btnSalvarEstoque.onclick = function () {
     if (desabilitado === 'false') {
-        /*var url = estoqueSelecionado ?/ "http://localhost:55571/api/estoque/atualizar" : "http://localhost:55571/api/estoque/inserir"; */
         $.ajax({
             url: "http://localhost:55571/api/estoque/",
             crossDomain: true,
@@ -172,7 +120,6 @@ btnSalvarEstoque.onclick = function () {
                 }
             },
             type: estoqueSelecionado ? 'PUT' : 'POST'
-            //type: 'POST'
         });
     }
 };

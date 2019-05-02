@@ -25,7 +25,7 @@ window.onload = function () {
 
 
     $.ajax({
-        url: "http://localhost:55571/api/estoque/Categorias",
+        url: "http://localhost:55571/api/estoque/categoria",
         crossDomain: true,
         dataType: 'json',
         success: function (data) {
@@ -59,7 +59,7 @@ dropDownFunction = function (pos) {
     idCatEstoqueCadastro = estoqueCategorias[pos].id;
 
     $.ajax({
-        url: "http://localhost:55571/api/estoque/pesquisarCategoria",
+        url: "http://localhost:55571/api/estoque/categoria",
         crossDomain: true,
         data: {
             "dado": idCatEstoqueCadastro
@@ -94,19 +94,20 @@ listarHTML = function () {
 
         var htmlString = '<tr>' +
             '<td>' + (estoque[i].EstoqueCat && estoque[i].EstoqueCat.nomeCategoria ? estoque[i].EstoqueCat.nomeCategoria : "N/A") + '</td>' +
-            //'<td>' + estoque[i].idCategoria + '</td>' +
+
             '<td>' + estoque[i].descricao + '</td>' +
             '<td>' + estoque[i].unidade + '</td>' +
             '<td>' + dataValidade + '</td>' +
             '<td>';
-        if (tipoUsuario != "medico") {
+      
+         htmlString += '<button type="button" class="btn btn-default bg-transparent formulario" id="btnRemover" onclick="btnRemoverClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Excluir Registro" style="float: right">' +
+           '<span class="fa fa-trash"></span>' +
+           '</button>';
+
             htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btnEditar" onclick="btnEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Estoque" style="float: right">' +
                 '<span class="fa fa-pencil"></span>' +
-                '</button>';
-        }
-        //htmlString += '<button type="button" class="btn btn-default bg-transparent formulario" id="btnVisualizar" onclick="btnVisualizarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Visualizar Estoque" style="float: right">' +
-        //    '<span class="fa fa-eye"></span>' +
-        //    '</button>' +
+                '</button>' +      
+       
             '</td>' +
             '</tr>';
         document.getElementById('tabela-estoque').innerHTML += htmlString;
@@ -142,6 +143,41 @@ btnNovoCadastro.onclick = function () {
     localStorage.setItem('estoqueSelecionado', null);
     window.location.assign("/pages/cadastroEstoque.aspx");
 };
+
+
+btnRemoverClick = function (index) {
+    localStorage.setItem('estoqueSelecionado', JSON.stringify(estoque[index]));
+    decisao = confirm("Deseja realmente todo registro selecionado?");
+
+    if (decisao) {
+
+        $.ajax({
+
+            url: "http://localhost:55571/api/estoque/",
+            crossDomain: true,
+            data: {
+
+                "id": estoque[index].id,
+                "idCategoria": estoque[index].idCategoria,
+                "descricao": estoque[index].descricao,
+                "dataValidade": estoque[index].dataValidade,
+                "unidade": estoque[index].unidade
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data !== null) {
+                    alert("Item removido do estoque!");
+                    window.location.reload();
+
+                } else {
+                    alert("Erro ao excluir item do estoque!");
+                }
+            },
+            type: 'DELETE'
+        });
+    }
+};
+
 
 
 reloadPage = function () {

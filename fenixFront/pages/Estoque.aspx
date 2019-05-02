@@ -68,7 +68,7 @@
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
-    <script src="../.js/Estoque.js"></script>
+    <script src="../.js/estoque.js"></script>
 </asp:Content>
 
 
