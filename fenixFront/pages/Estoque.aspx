@@ -31,26 +31,13 @@
                         <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
                             <span class="btn-label"><i class="fa fa-plus"></i>&nbspAdicionar</span>
                         </button>
-                    </div>
-                    <%--<div class="col col-md-6">
-                        <h6><span class="label label-default">Descrição</span></h6>
-                        <input type="text" class="form-control formulario" placeholder="Descrição" id="txtDescriçãoMatEstoque">
-                    </div>
-                    <div class="col col-md-2">
-                        <h6><span class="label label-default">Quantidade</span></h6>
-                        <input type="text" class="form-control formulario" placeholder="Descrição" id="txtQuantEstoque">
-                    </div>
-                    <div class="col col-md-2">
-                        <h6><span class="label label-default">Valor Unit</span></h6>
-                        <input type="text" class="form-control formulario" placeholder="Descrição" id="txtVlUnitMatEstoque">
-                    </div>--%>
+                    </div>         
                 </div>
             </div>
         </div>
     </div>
-
     <div align="center" id="grid">
-        <div class="card bg-light">
+        <div class="card bg-light col-12">
 
             <table class="table table-hover table1" id="tabela-estoque">
 
@@ -58,11 +45,13 @@
             <tr>
               <th scope="col">Categoria</th>
               <th scope="col">Descrição</th>
-              <th scope="col">Unidade</th>
+              <th scope="col">Qtd.</th>
               <th scope="col">Data Validade</th>
+              <th scope="col">Excluir/Editar</th>
+                
+
             </tr>
           </thead>
-
             </table>
         </div>
     </div>

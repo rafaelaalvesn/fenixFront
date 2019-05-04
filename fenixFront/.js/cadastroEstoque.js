@@ -1,7 +1,10 @@
 ﻿var estoqueSelecionado;
 var nomeCategoria = '';
 var idCatEstoqueCadastro = 0;
+var idCatEstoqueCadastroCat = 0;
 var desabilitado;
+var possuiValidadeChecked = false;
+
 
 window.onload = function () {
     preencherDropdown();
@@ -58,6 +61,8 @@ preencherDropdown = function () {
                     document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
                 }
 
+                htmlDropdownString = '<hr><a class="dropdown-item" id="btnNovaCategoria"  data-toggle="modal" data-target="#modalNovaCategoria">' +'+ Nova Categoria' +'</a>';
+                document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
             } else {
                 alert("Erro ao listar categorias.");
             }
@@ -123,3 +128,52 @@ btnSalvarEstoque.onclick = function () {
         });
     }
 };
+
+//possuiValidade.onclick = function () 
+function possuiValidade()
+{
+
+    var checkBox = document.getElementById('possuiValidade');
+
+    if (checkBox.checked == true) {
+        possuiValidadeChecked = true;
+    } else {
+        possuiValidadeChecked = false;
+    }
+
+   
+}
+
+btnSalvarNovaCategoria.onclick = function () {
+
+    var texto = inputNomeCategoria.value;
+    var textoFormatado = titleize(texto);
+
+    $.ajax({
+        url: "http://localhost:55571/api/estoque/categoria",
+        crossDomain: true,
+        data: {
+            "id": idCatEstoqueCadastroCat,
+            "nomeCategoria": textoFormatado,   
+            "possuiValidade": possuiValidadeChecked   
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+               alert("Categoria Inserida!");
+            } 
+        },
+        type: 'POST'
+    });
+}
+
+
+
+function titleize(text) {
+    var words = text.toLowerCase().split(" ");
+    for (var a = 0; a < words.length; a++) {
+        var w = words[a];
+        words[a] = w[0].toUpperCase() + w.slice(1);
+    }
+    return words.join(" ");
+}

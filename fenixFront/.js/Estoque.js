@@ -49,8 +49,7 @@ preencherDropdown = function () {
         var htmlDropdownString =
             '<a class="dropdown-item" id="' + estoqueCategorias[i].id + ' "onclick="dropDownFunction(' + i + ')">' + estoqueCategorias[i].nomeCategoria + '</a>';
         document.getElementById('dropdownCategorias').innerHTML += htmlDropdownString;
-    }
-
+    }   
 }
 
 
@@ -59,7 +58,7 @@ dropDownFunction = function (pos) {
     idCatEstoqueCadastro = estoqueCategorias[pos].id;
 
     $.ajax({
-        url: "http://localhost:55571/api/estoque/categoria",
+        url: "http://localhost:55571/api/estoque/GroupItensCategoria",
         crossDomain: true,
         data: {
             "dado": idCatEstoqueCadastro
@@ -100,11 +99,11 @@ listarHTML = function () {
             '<td>' + dataValidade + '</td>' +
             '<td>';
       
-         htmlString += '<button type="button" class="btn btn-default bg-transparent formulario" id="btnRemover" onclick="btnRemoverClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Excluir Registro" style="float: right">' +
+         htmlString += '<button type="button" class="btn btn-default bg-transparent formulario" id="btnRemover" onclick="btnRemoverClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Excluir Registro">' +
            '<span class="fa fa-trash"></span>' +
            '</button>';
 
-            htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btnEditar" onclick="btnEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Estoque" style="float: right">' +
+            htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btnEditar" onclick="btnEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Estoque">' +
                 '<span class="fa fa-pencil"></span>' +
                 '</button>' +      
        

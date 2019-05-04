@@ -57,6 +57,44 @@
             </form>
         </div>
     </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="modalNovaCategoria" tabindex="-1" role="dialog" aria-labelledby="modalNovaCategoria" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nova Categoria</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body col-12">
+            <div class="form-row">
+           <div class="form-group col-md-2 col-sm-12">
+    <label for="exampleInputPassword1">ID</label>
+    <input type="text" class="form-control" id="inputIdNovaCategoria" placeholder="ID" disabled>
+  </div>
+         <div class="form-group col-md-10 col-sm-10">
+    <label for="exampleInputPassword1">Nome da Categoria</label>
+    <input type="text" class="form-control" id="inputNomeCategoria" placeholder="Categoria">
+  </div>
+           <div class="form-group col-md-12 col-sm-12">
+    <div class="form-check" onclick="possuiValidade()">
+      <input class="form-check-input" type="checkbox" id="possuiValidade">
+      <label class="form-check-label" for="gridCheck">
+        Possui Validade
+      </label>
+    </div>
+  </div>
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-preto" id="btnSalvarNovaCategoria" onclick="btnSalvarNovaCategoria()">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
     <script src="../.js/cadastroEstoque.js"></script>
