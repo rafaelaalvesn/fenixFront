@@ -8,39 +8,31 @@ var idUsuario;
 
 window.onload = function () {
     preencherDropdown();
-    //desabilitado = localStorage['desabilitaTextBox'];
-    //usuarioSelecionado = JSON.parse(localStorage['usuarioSelecionado']);
+    desabilitado = localStorage['desabilitaTextBox'];
+    usuarioSelecionado = JSON.parse(localStorage['usuarioSelecionado']);
 
     //if (localStorage['nomeCategoria'] != null) {
     //    nomeCategoria = JSON.parse(localStorage['nomeCategoria']);
     //}
-    //if (desabilitado === 'true') {
-    //    var x = document.getElementsByClassName('formulario')
-    //    for (var i = 0; i < x.length; i++)
-    //        x[i].setAttribute("disabled", true);
-    //}
-    //if (desabilitado === 'false') {
-    //    var x = document.getElementsByClassName('formulario')
-    //    for (var i = 0; i < x.length; i++)
-    //        x[i].removeAttribute("disabled");
-    //}
+    if (desabilitado === 'true') {
+        var x = document.getElementsByClassName('formulario')
+        for (var i = 0; i < x.length; i++)
+            x[i].setAttribute("disabled", true);
+    }
+    if (desabilitado === 'false') {
+        var x = document.getElementsByClassName('formulario')
+        for (var i = 0; i < x.length; i++)
+            x[i].removeAttribute("disabled");
+    }
 
-    //if (estoqueSelecionado != null) {
-
-    //    if (estoqueSelecionado.dataValidade == null) {
-    //        var x = document.getElementById('dataValidade')
-    //        x.setAttribute("disabled", true);
-    //    }
-    //    else {
-    //        dataValidade.value = new Date(estoqueSelecionado.dataValidade).yyyymmdd();
-
-    //    }
-    //    document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueSelecionado.EstoqueCat.nomeCategoria;
-    //    descricao.value = estoqueSelecionado.descricao;
-    //    unidade.value = estoqueSelecionado.unidade;
-    //    codigo.value = estoqueSelecionado.id;
-    //    idCatEstoqueCadastro = estoqueSelecionado.EstoqueCat.id;
-    //}
+    if (usuarioSelecionado != null) {
+        
+        //document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueSelecionado.EstoqueCat.nomeCategoria;
+        //descricao.value = estoqueSelecionado.descricao;
+        //unidade.value = estoqueSelecionado.unidade;
+        //codigo.value = estoqueSelecionado.id;
+        //idCatEstoqueCadastro = estoqueSelecionado.EstoqueCat.id;
+    }
 }
 
 preencherDropdown = function () {
@@ -98,8 +90,8 @@ dropDownFunction = function (pos) {
 dropDownFunctionUsuarios = function (pos) {
 
     
-        document.getElementById('dropdownMenuButtonUsuarios').innerHTML = usuarios[pos].nome;   
-       idUsuario = usuarios[pos].id;
+    document.getElementById('dropdownMenuButtonUsuarios').innerHTML = usuarios[pos].nome;   
+    idUsuario = usuarios[pos].id;
 
 }
 
