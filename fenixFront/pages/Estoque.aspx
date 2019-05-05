@@ -16,7 +16,6 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="dropdown">
-<%--                            <h6><span class="label label-default">Filtrar por Categoria</span></h6>--%>
                             <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Filtrar por Categoria
                             </button>

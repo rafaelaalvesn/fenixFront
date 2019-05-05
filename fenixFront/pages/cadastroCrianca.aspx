@@ -52,7 +52,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>CEP</label>
-                        <input data-mask="00.000-000" data-mask-selectonfocus="true" type="text" class="form-control formulario" id="CEP">
+                        <input type="text" class="form-control formulario" id="CEP">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputCity">Rua</label>
