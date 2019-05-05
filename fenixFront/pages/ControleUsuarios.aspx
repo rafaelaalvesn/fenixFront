@@ -1,14 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ControleUsuarios.aspx.cs" Inherits="pages_ControleUsuarios"  MasterPageFile="~/master/MasterPage.master"  %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
-    <link href="../css/usuario.css" rel="stylesheet" />
+    <link href="../css/controleUsuario.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="content" runat="server">
     <div id="topo">
         <div>
             <div class="container col-12">
-                <h5 class="card-header bg-transparent tituloPagina">Estoque</h5>
+                <h5 class="card-header bg-transparent tituloPagina">Controle de Usuários</h5>
             </div>
 
             <div class="container col-12">
@@ -44,7 +44,9 @@
             <tr>
               <th scope="col">Nome</th>
               <th scope="col">E-mail</th>
+                 <th scope="col">Usuário</th>
               <th scope="col">Tipo de Usuário</th>
+                  <th scope="col">Status</th>
             </tr>
           </thead>
 
@@ -53,5 +55,5 @@
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
-    <script src="../.js/Usuario.js"></script>
+    <script src="../.js/controleUsuario.js"></script>
 </asp:Content>

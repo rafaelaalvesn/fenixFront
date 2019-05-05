@@ -15,11 +15,11 @@
         <div class="card-body" id="form">
             <form>      
                 <div class="form-row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-1">
                         <label>Código</label>
                         <input type="text" class="form-control" id="codigo" disabled>
                     </div>
-                    <div class="form-group  col-md-5">
+                    <div class="form-group  col-md-4">
                         <label class="obrigatorio">Nome</label>
                         <input type="text" class="form-control formulario" id="nome">
                     </div>
@@ -29,10 +29,14 @@
                             
                         </select>
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-1">
                         <label class="obrigatorio">Sexo</label>
                         <select class="form-control formulario" id="sexo">
                         </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>E-mail</label>
+                        <input type="text" class="form-control formulario" id="email">                       
                     </div>
                 </div>
                 <div class="form-row">

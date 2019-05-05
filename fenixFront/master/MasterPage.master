@@ -49,7 +49,8 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="/pages/ControleUsuarios.aspx" id="dropDownControleDeUsuario">Controle de Usuários</a>
-                                <a class="dropdown-item" href="/pages/login.aspx" id="dropDownSair">Sair</a>
+                         <%--       <a class="dropdown-item" href="/pages/login.aspx" id="dropDownSair">Sair</a>--%>
+                                <a class="dropdown-item" href="/pages/ControleUsuarios.aspx" id="dropDownSair">Sair</a>
 
                             </div>
                         </li>

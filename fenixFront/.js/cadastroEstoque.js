@@ -129,7 +129,6 @@ btnSalvarEstoque.onclick = function () {
     }
 };
 
-//possuiValidade.onclick = function () 
 function possuiValidade()
 {
 
@@ -166,7 +165,6 @@ btnSalvarNovaCategoria.onclick = function () {
         type: 'POST'
     });
 }
-
 
 
 function titleize(text) {
