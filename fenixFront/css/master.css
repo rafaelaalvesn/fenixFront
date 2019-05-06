@@ -73,3 +73,7 @@ body {
 #footer p {
         margin-top: 1%;
     }
+
+#welcomeMessage {
+    color: #ffffff;
+}

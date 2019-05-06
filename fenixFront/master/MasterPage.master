@@ -26,32 +26,42 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <div id="welcomeMessage">
+                    </div>
+
                     <ul class="navbar-nav ml-sm-auto ml-auto" id="linksMenu">
-                        <li class="nav-item active">
+                        <li class="nav-item active" id="liHome">
                             <a class="nav-link" href="/pages/home.aspx">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item removableBtn" id="liJovens">
                             <a class="nav-link" href="/pages/crianca.aspx">Jovens</a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item removableBtn" id="liVisitas">
                             <a class="nav-link" href="/pages/Visitas.aspx">Visitas</a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item removableBtn" id="liCaixa">
                             <a class="nav-link" href="/pages/Caixa.aspx">Caixa</a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item removableBtn" id="liEstoque">
                             <a class="nav-link" href="/pages/estoque.aspx">Estoque</a>
                         </li>
-                         <li class="nav-item">
+
+                         <li class="nav-item removableBtn" id="liRecursosHumanos">
                             <a class="nav-link" href="/pages/RecursosHumanos.aspx">Recursos Humanos</a>
                         </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-cog" style="color: white"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/pages/ControleUsuarios.aspx" id="dropDownControleDeUsuario">Controle de Usuários</a>
+                                <a class="dropdown-item removableBtn" href="/pages/ControleUsuarios.aspx" id="dropDownControleDeUsuario">Controle de Usuários</a>
                          <%--       <a class="dropdown-item" href="/pages/login.aspx" id="dropDownSair">Sair</a>--%>
-                                <a class="dropdown-item" href="/pages/ControleUsuarios.aspx" id="dropDownSair">Sair</a>
+                                <a class="dropdown-item" href="/pages/Login.aspx" id="dropDownSair">Sair</a>
 
                             </div>
                         </li>

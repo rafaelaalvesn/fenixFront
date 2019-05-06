@@ -11,9 +11,10 @@
     <div align="center" id="tela">
         <div class="card col-md-5 col-sm-12 slide-bottom" id="login">
             <div class="card-body">
-                <form>
+                <div>
                     <div>
-                        <img src="../img/fenix-logo-w.png" /></div>
+                        <img src="../img/fenix-logo-w.png" />
+                    </div>
                     <label id="textTitle" class="d-none d-md-block">ABRIGO FÊNIX </label>
                     <div class="form-group">
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Login">
@@ -21,8 +22,8 @@
                     <div class="form-group">
                         <input type="password" class="form-control" id="senha" placeholder="Senha">
                     </div>
-                    <button type="button" class="btn btn-outline-white" id="btnLogin" onclick="btnLogin()">Entrar</button>
-                </form>
+                    <button type="button" class="btn btn-outline-white" id="btnLogin">Entrar</button>
+                </div>
             </div>
         </div>
     </div>
