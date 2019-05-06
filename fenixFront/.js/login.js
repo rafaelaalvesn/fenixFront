@@ -1,23 +1,23 @@
 ﻿btnLogin.onclick = function () {
     var emailAux = email.value;
     var senhaAux = senha.value;
+
     $.ajax({
-        url: "http://localhost:55571/api/login",
-        crossDomain: true,
+        type: "POST",
+        url: 'http://localhost:55571/api/login/',
         data: {
             "email": emailAux,
             "senha": senhaAux
         },
-        dataType: 'json',
         success: function (data) {
             if (data !== null) {
-                localStorage.setItem('tipoUsuario', data.tipoUsuario);
+                sessionStorage.setItem('userData', JSON.stringify(data));
                 window.location.assign("/pages/crianca.aspx");
             } else {
                 alert("Email ou senha inválidos.");
             }
         },
-        type: 'POST'
+        dataType: 'json'
     });
 };
 
