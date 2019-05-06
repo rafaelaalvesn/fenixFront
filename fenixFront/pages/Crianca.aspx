@@ -12,7 +12,7 @@
                 <h5 class="card-header bg-transparent tituloPagina">Jovens</h5>
             </div>
 
-            <div class="container col-12">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
                         <input type="text" class="form-control formulario" placeholder="Pesquisar Jovem" id="txtPesquisa">
@@ -21,9 +21,8 @@
                         <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
                     </div>
 
-
                     <%-- checkBos de jovens desligados --%>
-                    <div class="col-md-4 form-check">
+                    <div class="col-md-4 col-sm-12 form-check">
                         <input class="form-check-input" type="checkbox" value="" id="checkBoxJovensDesligados">
                         <label class="form-check-label" for="defaultCheck1">
                             Mostrar apenas desligados.
