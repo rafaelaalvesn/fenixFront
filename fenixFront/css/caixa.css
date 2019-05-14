@@ -22,12 +22,12 @@
     margin-bottom: 50px;
 }
 
-.divTitulo{
+.divTitulo {
     padding-left: 0px;
 }
 
-.divBtnTransacao{
-padding-right: 0px;
+.w3.btn {
+    padding-right: 0px;
 }
 
 .teste {
@@ -37,13 +37,18 @@ padding-right: 0px;
     margin: auto;
 }
 
-#btnNovaTransacao{
+#btnNovaTransacao {
     width: 140px;
-    text-align: center; 
+    text-align: center;
+    padding: 5px;
+    transition: color .3s linear;
 }
 
-.btn-label{
-    text-align:center;
+.btn-label {
+    text-align: center;
     font-size: 10px;
+}
 
+.divBtnTransacao {
+    padding-right: 0px;
 }

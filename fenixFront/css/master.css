@@ -1,9 +1,7 @@
-﻿/*Cor do background: #778beb
-  Cor da Fênix:  #6f1e51
-*/
+﻿
 
 body {
-    background-color: #f5f6fa;
+    background-color: #227093;
     background-size: 100%;
     padding-bottom: 20px;
 }
@@ -25,11 +23,12 @@ body {
 
 
 .logotipoTitulo {
-    font-family: 'Montserrat', sans-serif;
+
+        font-family: 'Montserrat', sans-serif;
 }
 
 .menu {
-    background-color: rgba(0,0,0,5.0);
+    background-color: #1e272e;
     margin-bottom: 80px;
 }
 #linksMenu a {
