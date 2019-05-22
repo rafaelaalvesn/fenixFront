@@ -6,32 +6,20 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>Abrigo Fênix</title>
-    <meta http-equiv="”Content-Type”" content="”text/html;" charset="utf-8″">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
     <link rel="icon" type="image/gif" href="../img/fenix-logo-w.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/master.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-
-    <%-- teste de flatDesign --%>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-    <%-- fim do teste de flatDesign --%>
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-
-    <%-- teste de flatDesign --%>
-
-<%--    <div class="w3-container w3-flat-clouds">--%>
-        <%-- fim do teste de flatDesign --%>
-
-        <div>
+    <div>
         <asp:ContentPlaceHolder ID="header" runat="server">
-            <nav class="navbar navbar-expand-lg navbar-dark menu w3-container">
+            <nav class="navbar navbar-expand-lg navbar-dark menu">
                 <a class="navbar-brand logotipoTitulo" href="/pages/home.aspx">
                     <img src="/img/fenix-logo-w.png" width="30" height="30" class="d-inline-block align-top" alt="">&nbsp Fênix</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +51,7 @@
                             <a class="nav-link" href="/pages/estoque.aspx">Estoque</a>
                         </li>
 
-                        <li class="nav-item removableBtn" id="liRecursosHumanos">
+                         <li class="nav-item removableBtn" id="liRecursosHumanos">
                             <a class="nav-link" href="/pages/RecursosHumanos.aspx">Recursos Humanos</a>
                         </li>
 
@@ -72,7 +60,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item removableBtn" href="/pages/ControleUsuarios.aspx" id="dropDownControleDeUsuario">Controle de Usuários</a>
-                                <%--       <a class="dropdown-item" href="/pages/login.aspx" id="dropDownSair">Sair</a>--%>
+                         <%--       <a class="dropdown-item" href="/pages/login.aspx" id="dropDownSair">Sair</a>--%>
                                 <a class="dropdown-item" href="/pages/Login.aspx" id="dropDownSair">Sair</a>
 
                             </div>
@@ -82,7 +70,7 @@
             </nav>
         </asp:ContentPlaceHolder>
 
-        <div class="container col-md-11">
+        <div class="conteudoPagina container col-md-11">
             <asp:ContentPlaceHolder ID="content" runat="server">
             </asp:ContentPlaceHolder>
         </div>
@@ -96,7 +84,7 @@
 
         <%--<script src="../.js/jquery.mask.min.js"></script>
         <script src="../.js/bootstrap.min.js"></script>--%>
-
+     
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

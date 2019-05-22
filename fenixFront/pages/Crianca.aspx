@@ -18,7 +18,7 @@
                         <input type="text" class="form-control formulario" placeholder="Pesquisar Jovem" id="txtPesquisa">
                     </div>
                     <div class="col-md-2 col-sm-12">
-                        <button type="button" class="w3-btn w3-medium w3-hover-clouds w3-clear" id="btnPesquisar" onclick="btnPesquisar()"> <i class="fa fa-search"></i> Pesquisar</button>
+                        <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
                     </div>
 
                     <%-- checkBos de jovens desligados --%>
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="col-md-3 col-sm-12" align="right">
-                        <button type="button" class="w3-btn w3-medium w3-hover-clouds w3-clear" id="btnNovoCadastro" onclick="btnNovoCadastro()">
+                        <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
                             <span class="btn-label"><i class="fa fa-plus"></i>&nbspNovo Cadastro</span>
                         </button>
                     </div>
@@ -63,8 +63,8 @@
     </div>
 
 
-    <div align="center" id="grid w3-flat-clouds">
-        <div class="card bg-light w3-flat-clouds">
+    <div align="center" id="grid">
+        <div class="card bg-light">
 
             <table class="table table-hover table1" id="tabela-jovem">
             </table>
