@@ -70,7 +70,7 @@
             </nav>
         </asp:ContentPlaceHolder>
 
-        <div class="conteudoPagina container col-md-11">
+        <div class="conteudoPagina container">
             <asp:ContentPlaceHolder ID="content" runat="server">
             </asp:ContentPlaceHolder>
         </div>
