@@ -42,6 +42,7 @@
                 <thead>
             <tr>
               <th scope="col">Nome</th>
+              <th scope="col">Data de Nascimento</th>
               <th scope="col">Tipo de Usuário</th>
               <th scope="col">Status</th>
             </tr>
