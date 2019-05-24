@@ -1,6 +1,10 @@
 ﻿var usuarioSelecionado;
 var desabilitado;
 
+btnCloseForm.onclick = function () {
+    window.location.assign("/pages/RecursosHumanos.aspx");
+};
+
 window.onload = function () {
     desabilitado = localStorage['desabilitaTextBox'];
     usuarioSelecionado = JSON.parse(localStorage['usuarioSelecionado']);
@@ -16,17 +20,21 @@ window.onload = function () {
             x[i].removeAttribute("disabled");
     }
     if (usuarioSelecionado != null) {
+
+
         codigo.value = usuarioSelecionado.id;
         nome.value = usuarioSelecionado.nome;
         RG.value = usuarioSelecionado.RG;
         CPF.value = usuarioSelecionado.CPF;
-        dataNascimento.value = new Date(usuarioSelecionado.dataNascimento).yyyymmdd();
+        dataNascimento.value = new Date(usuarioSelecionado.data_nascimento).yyyymmdd();
         CEP.value = usuarioSelecionado.cep;
-        rua.value = usuarioSelecionado.rua;
+        rua.value = usuarioSelecionado.logradouro;
         dataEntrada.value = new Date(usuarioSelecionado.dataEntrada).yyyymmdd();
         dataSaida.value = new Date(usuarioSelecionado.dataSaida).yyyymmdd();
         numero.value = usuarioSelecionado.numero;
-        bairro.value = usuarioSelecionado.bairro;      
+        bairro.value = usuarioSelecionado.bairro;
+
+
         if (usuarioSelecionado.ligadoDesligado) {
             document.getElementById('ligadoDesligado').innerHTML += '<option>Ligado</option><option>Desligado</option>';
         } else {
@@ -55,11 +63,11 @@ Date.prototype.yyyymmdd = function () {
 
 btnSalvar = function () {
     if (desabilitado === 'false') {
-        var url = usuarioSelecionado ? "http://localhost:55571/api/jovem/atualizar" : "http://localhost:55571/api/jovem/inserir";
         $.ajax({
-            url: url,
+            url: "http://localhost:55571/api/usuario/",
             crossDomain: true,
             data: {
+                "id": codigo.value,
                 "CPF": CPF.value,
                 "RG": RG.value,
                 "bairro": bairro.value,
@@ -69,13 +77,9 @@ btnSalvar = function () {
                 "dataSaida": dataSaida.value,
                 "id": codigo.value,
                 "idade": codigo.value,
-                "ligadoDesligado": ligadoDesligado.value == 'Ligado' ? true : false,
-                "motivoSaida": motivoSaida.value,
+                "ligadoDesligado": ligadoDesligado.value == 'Ligado' ? true : false,           
                 "nome": nome.value,
-                "nomeResponsavel": nomeResponsavel.value,
                 "numero": numero.value,
-                "outroResponsavel": outroResponsavel.value,
-                "responsavel": responsavel.value,
                 "rua": rua.value,
                 "sexo": sexo.value.substring(0, 1)
             },
@@ -92,3 +96,9 @@ btnSalvar = function () {
     }
 }
 
+$(document).ready(function () {
+    $("input[id*='CPF']").inputmask({
+        mask: ['999.999.999-99', '99.999.999/9999-99'],
+        keepStatic: true
+    });
+});

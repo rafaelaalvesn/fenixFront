@@ -103,17 +103,14 @@ btnSalvar = function () {
                     jovemSelecionado ? alert("Erro ao atualizar") : alert("Erro ao inserir");
                 }
             },
-            type: 'POST'
+            type: usuarioSelecionado ? 'PUT' : 'POST'
         });
     }
 }
 
 $(document).ready(function () {
-
     $("input[id*='CPF']").inputmask({
         mask: ['999.999.999-99', '99.999.999/9999-99'],
         keepStatic: true
     });
-   
-   
 });

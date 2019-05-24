@@ -2,8 +2,14 @@
 var idTipoUsuarioCadastro;
 
 btnNovoCadastro.onclick = function () {
-    //localStorage.setItem('desabilitaTextBox', 'false');
-    //localStorage.setItem('jovemSelecionado', null);
+    localStorage.setItem('desabilitaTextBox', 'false');
+    localStorage.setItem('usuarioSelecionado', null);
+    window.location.assign("/pages/cadastroRecursosHumanos.aspx");
+};
+
+btnEditarClick = function (index) {
+    localStorage.setItem('desabilitaTextBox', 'false');
+    localStorage.setItem('usuarioSelecionado', JSON.stringify(usuarios[index]));
     window.location.assign("/pages/cadastroRecursosHumanos.aspx");
 };
 
@@ -100,14 +106,9 @@ listarHTML = function () {
               '<td>' + (usuarios[i].ligadoDesligado ? "LIGADO" : "DESLIGADO") + '</td>' +
             '<td>';
 
-        htmlString += '<button type="button" class="btn btn-default bg-transparent formulario" id="btnRemover" onclick="btnRemoverClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Excluir Registro">' +
-          '<span class="fa fa-trash"></span>' +
-          '</button>';
-
-        htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btnEditar" onclick="btnEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Estoque">' +
+        htmlString +=  '<button type="button" class="btn btn-default bg-transparent" id="btnEditar" onclick="btnEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Estoque">' +
             '<span class="fa fa-pencil"></span>' +
-            '</button>' +
-
+            '</button>'  + 
         '</td>' +
         '</tr>';
         document.getElementById('tabela-rh').innerHTML += htmlString;

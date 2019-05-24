@@ -104,7 +104,7 @@
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="scriptsPagina" runat="server">
-    <script src="../.js/cadastroCrianca.js"></script>
+    <script src="../.js/cadastroRecursosHumanos.js"></script>
 </asp:Content>
 
     
