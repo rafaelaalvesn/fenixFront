@@ -18,7 +18,7 @@
                 <%-- botão rádio de escolha entre entrada e saída --%>
                 <div class="form-row">
                     <div class="col-md-3">
-                        <input type="radio" name="radio" value="entrada" id="entrada" onclick:btnTipoTransacao()>Nova Entrada
+                        <input type="radio" name="radio" value="entrada" id="entrada" onclick=btnTipoTransacao()>Nova Entrada
                     </div>
                     <div class="col-md-3">
                         <input type="radio" name="radio" value="saida" id="saida" onclick:"btnTipoTransacao()">Nova Saída

@@ -1,5 +1,5 @@
-﻿
-
+﻿var caixa;
+var tipoUsuario;
 
 btnTipoTransacao.onClick = function () {
     if (document.getElementById("entrada").checked == true) {
@@ -14,3 +14,21 @@ btnTipoTransacao.onClick = function () {
     }
 };
 
+window.onload = function () {
+
+    tipoUsuario = localStorage['tipoUsuario'];
+    $.ajax({
+        url: "http://localhost:55571/api/CAIXA/",
+        crossDomain: true,
+        dataType: 'json',
+        success: function (data) {
+            if (data !== null) {
+                caixa = data;
+                listarHTML();
+            } else {
+                alert("Erro ao listar caixa.");
+            }
+        },
+        type: 'GET'
+    });
+}
