@@ -66,7 +66,8 @@ btnSalvar = function () {
         $.ajax({
             url: "http://localhost:55571/api/usuario/",
             crossDomain: true,
-            data: {
+            contentType: "application/json; charset=utf-8",
+            data:  JSON.stringify({
                 "id": codigo.value,
                 "CPF": CPF.value,
                 "RG": RG.value,
@@ -82,7 +83,7 @@ btnSalvar = function () {
                 "numero": numero.value,
                 "rua": rua.value,
                 "sexo": sexo.value.substring(0, 1)
-            },
+            }),
             dataType: 'json',
             success: function (data) {
                 if (data !== null) {
