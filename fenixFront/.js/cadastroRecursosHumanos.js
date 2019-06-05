@@ -21,18 +21,16 @@ window.onload = function () {
     }
     if (usuarioSelecionado != null) {
 
-
         codigo.value = usuarioSelecionado.id;
         nome.value = usuarioSelecionado.nome;
-        RG.value = usuarioSelecionado.RG;
         CPF.value = usuarioSelecionado.CPF;
         dataNascimento.value = new Date(usuarioSelecionado.data_nascimento).yyyymmdd();
         CEP.value = usuarioSelecionado.cep;
         rua.value = usuarioSelecionado.logradouro;
         dataEntrada.value = new Date(usuarioSelecionado.dataEntrada).yyyymmdd();
         dataSaida.value = new Date(usuarioSelecionado.dataSaida).yyyymmdd();
-        numero.value = usuarioSelecionado.numero;
         bairro.value = usuarioSelecionado.bairro;
+        uf.value = usuarioSelecionado.uf;
 
 
         if (usuarioSelecionado.ligadoDesligado) {
@@ -69,19 +67,19 @@ btnSalvar = function () {
             contentType: "application/json; charset=utf-8",
             data:  JSON.stringify({
                 "id": codigo.value,
-                "CPF": CPF.value,
-                "RG": RG.value,
+                "cpf": CPF.value,
                 "bairro": bairro.value,
                 "cep": CEP.value,
+                "uf": uf.value,
+                "localidade": cidade.value,
                 "dataEntrada": dataEntrada.value,
-                "dataNascimento": dataNascimento.value,
+                "data_nascimento": dataNascimento.value,
                 "dataSaida": dataSaida.value,
-                "id": codigo.value,
                 "idade": codigo.value,
                 "ligadoDesligado": ligadoDesligado.value == 'Ligado' ? true : false,           
                 "nome": nome.value,
                 "numero": numero.value,
-                "rua": rua.value,
+                "logradouro": rua.value,
                 "sexo": sexo.value.substring(0, 1)
             }),
             dataType: 'json',
@@ -92,7 +90,7 @@ btnSalvar = function () {
                     usuarioSelecionado ? alert("Erro ao atualizar") : alert("Erro ao inserir");
                 }
             },
-            type: 'POST'
+            type: usuarioSelecionado ? 'PUT' : 'POST'
         });
     }
 }

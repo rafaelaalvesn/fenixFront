@@ -20,16 +20,6 @@
                     <div class="col-md-2 col-sm-12">
                         <button type="button" class="btn btn-preto" id="btnPesquisar" onclick="btnPesquisar()">Pesquisar</button>
                     </div>
-
-
-                    <%-- checkBos de jovens desligados --%>
-                    <div class="col-md-4 form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkBoxJovensDesligados">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Mostrar apenas desligados.
-                        </label>
-                    </div>
-
                     <div class="col-md-3 col-sm-12" align="right">
                         <button type="button" class="btn btn-labeled btn-preto" id="btnNovoCadastro" onclick="btnNovoCadastro()">
                             <span class="btn-label"><i class="fa fa-plus"></i>&nbspNovo Cadastro</span>
