@@ -16,7 +16,7 @@
                     <div class="col-md-6 col-sm-12">
                         <div class="dropdown">
                             <button class="btn btn-preto dropdown-toggle" type="button" id="dropdownMenuButtonUsuarios" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Filtrar por tipo Usuário
+                                Filtrar por Setor/Função
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownUsuarios">
                        
@@ -45,7 +45,7 @@
               <th scope="col">Nome</th>
               <th scope="col">E-mail</th>
                  <th scope="col">Usuário</th>
-              <th scope="col">Tipo de Usuário</th>
+              <th scope="col">Setor/Função</th>
                   <th scope="col">Status</th>
             </tr>
           </thead>

@@ -6,6 +6,21 @@ var desabilitado;;
 var idUsuario;
 
 
+var cep
+var CPF
+var RG
+var bairro 
+var numero 
+var dataEntrada 
+var dataSaida 
+var idade
+var ligadoDesligado 
+var nome 
+var logradouro 
+var sexo 
+var data_nascimento
+
+
 window.onload = function () {
     preencherDropdown();
     desabilitado = localStorage['desabilitaTextBox'];
@@ -29,9 +44,9 @@ window.onload = function () {
         
         //document.getElementById('dropdownMenuButtonCategorias').innerHTML = estoqueSelecionado.EstoqueCat.nomeCategoria;
         //descricao.value = estoqueSelecionado.descricao;
-        //unidade.value = estoqueSelecionado.unidade;
-        //codigo.value = estoqueSelecionado.id;
-        //idCatEstoqueCadastro = estoqueSelecionado.EstoqueCat.id;
+        email.value = usuarioSelecionado.email;
+        login.value = usuarioSelecionado.login;
+        
     }
 }
 
@@ -88,13 +103,70 @@ dropDownFunction = function (pos) {
 }
 
 dropDownFunctionUsuarios = function (pos) {
-
-    
+   
     document.getElementById('dropdownMenuButtonUsuarios').innerHTML = usuarios[pos].nome;   
     idUsuario = usuarios[pos].id;
+
+    cep = usuarios[pos].cep
+     CPF = usuarios[pos].CPF
+     RG =  usuarios[pos].RG   
+     bairro = usuarios[pos].bairro      
+     numero =  usuarios[pos].numero
+     dataEntrada = usuarios[pos].dataEntrada    
+     dataSaida = usuarios[pos].dataSaida   
+     idade = usuarios[pos].idade //idade????? TODO
+     ligadoDesligado =  usuarios[pos].ligadoDesligado
+     nome =  usuarios[pos].nome
+     logradouro = usuarios[pos].logradouro
+     sexo = usuarios[pos].sexo
+     data_nascimento = usuarios[pos].data_nascimento
+
 
 }
 
 btnCloseForm.onclick = function () {
     window.location.assign("/pages/ControleUsuarios.aspx");
 };
+
+
+btnSalvarUsuario.onclick = function () {
+    if (desabilitado === 'false') {
+        $.ajax({
+            url: "http://localhost:55571/api/usuario/",
+            crossDomain: true,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+
+            
+                "CPF": CPF,
+                "RG": RG,
+                "bairro": bairro,
+                "cep": cep,
+                "dataEntrada": dataEntrada,
+                "data_nascimento": data_nascimento,
+                "dataSaida": dataSaida,           
+                "idade": idade,
+                "ligadoDesligado": ligadoDesligado,
+                "nome": nome,
+                "numero": numero,
+                "logradouro": logradouro,
+                "sexo": sexo,
+                "id": idUsuario,
+                "email": email.value,
+                "usuario1": login.value,
+                "senha": senha.value              
+            }),
+            dataType: 'json',
+            success: function (data) {
+                if (data !== null) {
+                   alert("Usuário atualizado!");
+                } else {
+                   alert("Erro ao inserir");
+                }
+            },
+            type: 'PUT'
+        });
+    }
+}
+
+

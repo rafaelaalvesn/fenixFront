@@ -96,7 +96,7 @@ $(document).ready(function () {
             }
         }
 
-        welcomeMessage.innerHTML = `Olá ${this.userData.nome}! (<a href="/pages/Login.aspx" onclick="clearSessionStorage()">sair</a>)`;
+        welcomeMessage.innerHTML = `Olá ${this.userData.nome}!`;
     }
 });
 

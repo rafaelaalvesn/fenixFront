@@ -90,15 +90,6 @@ listarHTML = function () {
 
     for (var i = 0; i < usuarios.length; i++) {
 
-        //dataValidade = estoque[i].dataValidade;
-        //if (dataValidade == null) {
-        //    dataValidade = '-'
-        //}
-
-        //else {
-        //    dataValidade = formataData(dataValidade);
-        //}
-
         var htmlString = '<tr>' +       
             '<td>' + usuarios[i].nome + '</td>' +          
             '<td>' + formataData(usuarios[i].data_nascimento) + '</td>' +

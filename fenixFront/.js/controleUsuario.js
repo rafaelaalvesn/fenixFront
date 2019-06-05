@@ -43,9 +43,6 @@ window.onload = function () {
 }
 
 
-
-
-
 listarHTML = function () {
 
 
@@ -63,7 +60,7 @@ listarHTML = function () {
             '<span class="fa fa-trash"></span>' +
             '</button>';
 
-        htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btnEditar" onclick="btnEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Estoque">' +
+        htmlString += '<button type="button" class="btn btn-default bg-transparent" id="btnEditar" onclick="btnEditarClick(' + i + ')" data-toggle="tooltip" data-container="body" data-placement="top" title="Editar Usuário">' +
             '<span class="fa fa-pencil"></span>' +
             '</button>' +
 
@@ -92,11 +89,11 @@ preencherDropdown = function () {
 
 
 dropDownFunction = function (pos) {
-    document.getElementById('dropdownMenuButtonUsuarios').innerHTML = estoqueCategorias[pos].nomeCategoria;
-    idCatEstoqueCadastro = estoqueCategorias[pos].id;
+    document.getElementById('dropdownMenuButtonUsuarios').innerHTML = usuarioTipo[pos].tipo;
+    idtipoUsuarioCadastro = usuarioTipo[pos].id;
 
     $.ajax({
-        url: "http://localhost:55571/api/estoque/GroupItensTipoUsuario",
+        url: "http://localhost:55571/api/usuario/GroupItensTipoUsuario",
         crossDomain: true,
         data: {
             "dado": idtipoUsuarioCadastro
@@ -113,4 +110,58 @@ dropDownFunction = function (pos) {
         },
         type: 'POST'
     });
+}
+
+
+reloadPage = function () {
+    window.location.reload();
+};
+
+btnEditarClick = function (index) {
+    localStorage.setItem('desabilitaTextBox', 'false');
+    localStorage.setItem('usuarioSelecionado', JSON.stringify(usuario[index]));
+    window.location.assign("/pages/cadastroUsuario.aspx");
+};
+
+btnRemoverClick = function () {
+    localStorage.setItem('usuarioSelecionado', JSON.stringify(usuario[index]));
+
+        $.ajax({
+            url: "http://localhost:55571/api/usuario/",
+            crossDomain: true,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+
+
+                "CPF": usuarioSelecionado.CPF,
+                "RG": usuarioSelecionado.RG,
+                "bairro": usuarioSelecionado.bairro,
+                "cep": usuarioSelecionado.cep,
+                "dataEntrada": usuarioSelecionado.dataEntrada,
+                "data_nascimento": usuarioSelecionado.data_nascimento,
+                "dataSaida": usuarioSelecionado.dataSaida,
+                "idade": usuarioSelecionado.idade,
+                "ligadoDesligado": usuarioSelecionado.ligadoDesligado,
+                "nome": usuarioSelecionado.nome,
+                "numero": usuarioSelecionado.numero,
+                "logradouro": usuarioSelecionado.logradouro,
+                "sexo": usuarioSelecionado.sexo,
+                "id": usuarioSelecionado.idUsuario,
+
+                "email": null,
+                "usuario1": null,
+                "senha": null
+
+            }),
+            dataType: 'json',
+            success: function (data) {
+                if (data !== null) {
+                    alert("Usuário Excluído!");
+                } else {
+                    alert("Erro ao excluir");
+                }
+            },
+            type: 'PUT'
+        });
+    
 }

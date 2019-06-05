@@ -62,7 +62,7 @@
                 </div>
                  <div class="form-row">
                     <div class="form-group col-md-12" align="right">
-                        <button id="btnSalvarEstoque" type="button" class="btn btn-labeled btn-preto" onclick="btnSalvarEstoque()"> 
+                        <button id="btnSalvarUsuario" type="button" class="btn btn-labeled btn-preto" onclick="btnSalvarUsuario()"> 
                             <span class="btn-label"><i class="fa fa-check"></i></span>&nbspSalvar
                         </button>          
                     </div>
