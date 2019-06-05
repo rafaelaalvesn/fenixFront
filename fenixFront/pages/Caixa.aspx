@@ -16,9 +16,8 @@
 
                 <%-- botão para nova transação --%>
                 <div class="divBtnTransacao col-md-2 col-sm-12" align="right">
-                    <button type="button" class="btn btn-labeled btn-preto" id="btnNovaTransacao" onclick="btnNovaTransacao()">
-                        <span class="btn-label"><i class="fa fa-plus"></i></span>&nbspNova Transacao
-                    </button>
+
+                    <button type="button" class="btn btn-preto" id="btnNovaTransacao" onclick="btnNovaTransacao()">Nova Transacao</button>
                 </div>
                 <%-- fim do botão para nova transação --%>
             </div>

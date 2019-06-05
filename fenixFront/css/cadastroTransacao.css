@@ -6,6 +6,19 @@
     margin-right: 50px;
 }
 
-.lblNumTransacao{
-   text-align: right;
+.lblNumTransacao {
+    text-align: right;
+}
+
+.btnNovaTransacao a{
+    color: red !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 5px;
+    transition: color .3s linear;
+}
+
+.buttonTransacao{
+    margin-top: 5px !important;
 }

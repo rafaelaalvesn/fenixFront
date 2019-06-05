@@ -76,3 +76,8 @@ formataData = function (dataFormatSQL) {
     var dataPadraoBR = (moment(dataFormatSQL).format('DD/MM/YYYY'));
     return dataPadraoBR
 }
+
+btnNovaTransacao = function () {
+
+    window.location.assign("/pages/transacaoCaixa.aspx");
+};
