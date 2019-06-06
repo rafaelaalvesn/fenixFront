@@ -137,7 +137,6 @@ btnSalvarUsuario.onclick = function () {
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({
 
-            
                 "CPF": CPF,
                 "RG": RG,
                 "bairro": bairro,
@@ -158,15 +157,16 @@ btnSalvarUsuario.onclick = function () {
             }),
             dataType: 'json',
             success: function (data) {
-                if (data !== null) {
+                if (data !== null && (senha.value === confSenha.value)) {
                    alert("Usuário atualizado!");
                 } else {
-                   alert("Erro ao inserir");
+                   alert("Erro ao inserir, verifique se as senhas conferem");
                 }
             },
             type: 'PUT'
         });
-    }
+    } 
+    
 }
 
 

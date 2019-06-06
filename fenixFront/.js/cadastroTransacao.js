@@ -32,3 +32,7 @@ radioEntrada.onclick = function () {
 radioSaida.onclick = function () {
     tipoTransacao = 'saida';
 }
+
+btnCloseForm.onclick = function () {
+    window.location.assign("/pages/Caixa.aspx");
+};

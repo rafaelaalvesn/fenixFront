@@ -78,7 +78,6 @@ btnSalvar = function () {
                 "idade": codigo.value,
                 "ligadoDesligado": ligadoDesligado.value == 'Ligado' ? true : false,           
                 "nome": nome.value,
-                "numero": numero.value,
                 "logradouro": rua.value,
                 "sexo": sexo.value.substring(0, 1)
             }),
